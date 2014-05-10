@@ -1,0 +1,65 @@
+﻿@model ClinicaWEB.Models.PlanesModel
+
+@{
+    ViewBag.Title = "Baja";
+}
+
+<h2>Baja</h2>
+
+<h3>¿Realmente quiere borrar este registro?</h3>
+<fieldset>
+    <!-- <legend>PlanesModel</legend> -->
+
+    <div class="form-group">
+         <b>@Html.DisplayNameFor(model => model.Id)</b>
+         @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="form-group">
+         <b>@Html.DisplayNameFor(model => model.Descripcion)</b>
+         @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="form-group">
+         <b>@Html.DisplayNameFor(model => model.PrecBConsulta)</b>
+         @Html.DisplayFor(model => model.PrecBConsulta)
+    </div>
+
+    <div class="form-group">
+         <b>@Html.DisplayNameFor(model => model.PrecBFarmacia)</b>
+         @Html.DisplayFor(model => model.PrecBFarmacia)
+    </div>
+
+    <div class="form-group">
+         <b>@Html.DisplayNameFor(model => model.Codigo)</b>
+         @Html.DisplayFor(model => model.Codigo)
+    </div>
+</fieldset>
+@*@using (Html.BeginForm()) {*@
+<form action="/Planes/Baja" method="post">
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Descripcion)
+    @Html.HiddenFor(model => model.PrecBConsulta)
+    @Html.HiddenFor(model => model.PrecBFarmacia)
+    @Html.HiddenFor(model => model.Codigo)
+    <p>
+        <input type="submit" value="Borrar" />
+    </p>
+@*}*@
+</form>
+<br />
+@if (!String.IsNullOrEmpty(ViewBag.error))
+{
+    <div class="alert alert-danger">
+        <strong>@ViewBag.error</strong>
+    </div>
+}
+
+@if (!String.IsNullOrEmpty(ViewBag.ok))
+{
+    <div class="alert alert-success">
+        <strong>@ViewBag.ok</strong>
+    </div>
+}
+<br />
+@Html.ActionLink("Volver a la lista", "Listar")

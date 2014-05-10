@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - ClinicaWEB by Buleanitos</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @*@Styles.Render("~/Content/css")*@ <!--bundle original-->
+        <link href="/Content/Slate.css" rel="stylesheet"/><!--www.http://bootswatch.com/slate/-->
+        <link href="/Content/bootswatch.min.css" rel="stylesheet"/><!-- bootstrap minified -->
+    </head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top"> <!--navbar-inverse para que sea en gris-->
+			<!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+			    <div class="navbar-header">
+				    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+					    <span class="icon-bar"></span> <span class="icon-bar"></span>
+				    </button>
+				    <b><a class="navbar-brand" @Html.ActionLink("ClinicaWeb  >", "Index", "Home")</a></b>
+			    </div>
+			    <center>
+				    <div class="navbar-brand">@ViewBag.Title</div>
+			    </center>
+            </div>
+		</div>
+        
+        <div class="container">
+            <div class="page-header">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+            </div>
+        </div>
+</body>
+</html>

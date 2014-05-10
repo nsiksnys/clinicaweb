@@ -1,0 +1,46 @@
+﻿@model ClinicaWEB.Models.LoginModel
+
+@{
+    ViewBag.Title = "Bienvenido";
+}
+
+<div id="loginForm">
+<h2>Ingrese sus datos para iniciar sesión.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <!--<legend>Log in Form</legend>-->
+        <hr>
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName)
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+            </div>
+        <div class="form-group">
+            @Html.CheckBoxFor(m => m.RememberMe)
+            <!--@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })-->
+            @Html.LabelFor(m => m.RememberMe)
+        </div>
+        <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+    </fieldset>
+    <!--<p>
+        @Html.ActionLink("Register", "Register") if you don't have an account.
+    </p>-->
+}
+</div>
+
+<!--<section class="social" id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

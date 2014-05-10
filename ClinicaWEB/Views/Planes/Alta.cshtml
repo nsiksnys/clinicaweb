@@ -1,0 +1,61 @@
+﻿@model ClinicaWEB.Models.PlanesModel
+
+@{
+    ViewBag.Title = "Alta";
+}
+
+<h2>Alta de un nuevo Plan</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <!-- <legend>UsuarioModel</legend> -->
+        <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descripcion)
+            @Html.EditorFor(model => model.Descripcion)
+        </div>
+        <div class="form-group">
+            <label for="PrecBConsulta">Precio Bono Consulta</label>
+            @Html.EditorFor(model => model.PrecBConsulta)
+            @Html.ValidationMessageFor(model => model.PrecBConsulta)
+        </div>
+
+       <div class="form-group">
+           <label for="PrecBFarmacia">Precio Bono Farmacia</label>
+            @Html.EditorFor(model => model.PrecBFarmacia)
+            @Html.ValidationMessageFor(model => model.PrecBFarmacia)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Codigo)
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>
+
+        <p>
+            <input type="submit" value="Crear" />
+        </p>
+    </fieldset>
+}
+<br />
+@if (!String.IsNullOrEmpty(ViewBag.error))
+{
+    <div class="alert alert-danger">
+        <strong>@ViewBag.error</strong>
+    </div>
+}
+
+@if (!String.IsNullOrEmpty(ViewBag.ok))
+{
+    <div class="alert alert-success">
+        <strong>@ViewBag.ok</strong>
+    </div>
+}
+<br />
+<div>
+    @Html.ActionLink("Volver a la lista", "Listar")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

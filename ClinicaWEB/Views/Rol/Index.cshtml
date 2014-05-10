@@ -1,0 +1,13 @@
+﻿@model List<ClinicaWEB.Models.RolModel>
+
+@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Por favor elija su rol</h2>
+@foreach (ClinicaWEB.Models.RolModel item in Model)
+{
+    @Html.ActionLink(item.Nombre, "Index", "Home");
+    //<script type="text/javascript"> window.alert("Bienvenido a mi sitio web. Gracias...") </script>
+}

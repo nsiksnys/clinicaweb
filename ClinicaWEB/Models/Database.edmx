@@ -1,0 +1,2137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="Administrativo" EntityType="DatabaseModel.Store.Administrativo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Afiliados" EntityType="DatabaseModel.Store.Afiliados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AfiliadosBaja" EntityType="DatabaseModel.Store.AfiliadosBaja" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agenda" EntityType="DatabaseModel.Store.Agenda" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BonoConsulta" EntityType="DatabaseModel.Store.BonoConsulta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BonoFarmacia" EntityType="DatabaseModel.Store.BonoFarmacia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BonoFarmReceta" EntityType="DatabaseModel.Store.BonoFarmReceta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CambioDePlan" EntityType="DatabaseModel.Store.CambioDePlan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CompraBonos" EntityType="DatabaseModel.Store.CompraBonos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CompraBonosConDetalle" EntityType="DatabaseModel.Store.CompraBonosConDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CompraBonosFarmDetalle" EntityType="DatabaseModel.Store.CompraBonosFarmDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Consultas" EntityType="DatabaseModel.Store.Consultas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Especialidades" EntityType="DatabaseModel.Store.Especialidades" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Funcionalidades" EntityType="DatabaseModel.Store.Funcionalidades" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Planes" EntityType="DatabaseModel.Store.Planes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Profesionales" EntityType="DatabaseModel.Store.Profesionales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProfEsp" EntityType="DatabaseModel.Store.ProfEsp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Recetas" EntityType="DatabaseModel.Store.Recetas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="DatabaseModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RolFuncion" EntityType="DatabaseModel.Store.RolFuncion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoEspecialidad" EntityType="DatabaseModel.Store.TipoEspecialidad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Turnos" EntityType="DatabaseModel.Store.Turnos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TurnosCancelados" EntityType="DatabaseModel.Store.TurnosCancelados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsuarioRol" EntityType="DatabaseModel.Store.UsuarioRol" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="DatabaseModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Administr__IdUsu__7E37BEF6" Association="DatabaseModel.Store.FK__Administr__IdUsu__7E37BEF6">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Administrativo" EntitySet="Administrativo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Afiliados__IdAfi__286302EC" Association="DatabaseModel.Store.FK__Afiliados__IdAfi__286302EC">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="AfiliadosBaja" EntitySet="AfiliadosBaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Afiliados__IdPla__1BFD2C07" Association="DatabaseModel.Store.FK__Afiliados__IdPla__1BFD2C07">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="Afiliados" EntitySet="Afiliados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Afiliados__IdUsu__1CF15040" Association="DatabaseModel.Store.FK__Afiliados__IdUsu__1CF15040">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Afiliados" EntitySet="Afiliados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__IdEspec__412EB0B6" Association="DatabaseModel.Store.FK__Agenda__IdEspec__412EB0B6">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__IdProfes__403A8C7D" Association="DatabaseModel.Store.FK__Agenda__IdProfes__403A8C7D">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoConsu__IdAfi__4CA06362" Association="DatabaseModel.Store.FK__BonoConsu__IdAfi__4CA06362">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoConsu__IdPla__4D94879B" Association="DatabaseModel.Store.FK__BonoConsu__IdPla__4D94879B">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoFarma__IdAfi__59063A47" Association="DatabaseModel.Store.FK__BonoFarma__IdAfi__59063A47">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoFarma__IdPla__59FA5E80" Association="DatabaseModel.Store.FK__BonoFarma__IdPla__59FA5E80">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoFarmR__IdBon__6383C8BA" Association="DatabaseModel.Store.FK__BonoFarmR__IdBon__6383C8BA">
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+            <End Role="BonoFarmReceta" EntitySet="BonoFarmReceta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoFarmR__IdRec__6477ECF3" Association="DatabaseModel.Store.FK__BonoFarmR__IdRec__6477ECF3">
+            <End Role="Recetas" EntitySet="Recetas" />
+            <End Role="BonoFarmReceta" EntitySet="BonoFarmReceta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CambioDeP__IdAfi__21B6055D" Association="DatabaseModel.Store.FK__CambioDeP__IdAfi__21B6055D">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="CambioDePlan" EntitySet="CambioDePlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CambioDeP__IdPla__22AA2996" Association="DatabaseModel.Store.FK__CambioDeP__IdPla__22AA2996">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="CambioDePlan" EntitySet="CambioDePlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CambioDeP__IdPla__239E4DCF" Association="DatabaseModel.Store.FK__CambioDeP__IdPla__239E4DCF">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="CambioDePlan" EntitySet="CambioDePlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompraBon__IdAfi__693CA210" Association="DatabaseModel.Store.FK__CompraBon__IdAfi__693CA210">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="CompraBonos" EntitySet="CompraBonos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompraBon__IdBon__6EF57B66" Association="DatabaseModel.Store.FK__CompraBon__IdBon__6EF57B66">
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+            <End Role="CompraBonosConDetalle" EntitySet="CompraBonosConDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompraBon__IdBon__74AE54BC" Association="DatabaseModel.Store.FK__CompraBon__IdBon__74AE54BC">
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+            <End Role="CompraBonosFarmDetalle" EntitySet="CompraBonosFarmDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompraBon__IdCom__6E01572D" Association="DatabaseModel.Store.FK__CompraBon__IdCom__6E01572D">
+            <End Role="CompraBonos" EntitySet="CompraBonos" />
+            <End Role="CompraBonosConDetalle" EntitySet="CompraBonosConDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompraBon__IdCom__73BA3083" Association="DatabaseModel.Store.FK__CompraBon__IdCom__73BA3083">
+            <End Role="CompraBonos" EntitySet="CompraBonos" />
+            <End Role="CompraBonosFarmDetalle" EntitySet="CompraBonosFarmDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__IdAfi__52593CB8" Association="DatabaseModel.Store.FK__Consultas__IdAfi__52593CB8">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__IdBon__5441852A" Association="DatabaseModel.Store.FK__Consultas__IdBon__5441852A">
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__IdPro__534D60F1" Association="DatabaseModel.Store.FK__Consultas__IdPro__534D60F1">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Especiali__IdTip__35BCFE0A" Association="DatabaseModel.Store.FK__Especiali__IdTip__35BCFE0A">
+            <End Role="TipoEspecialidad" EntitySet="TipoEspecialidad" />
+            <End Role="Especialidades" EntitySet="Especialidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profesion__IdUsu__2D27B809" Association="DatabaseModel.Store.FK__Profesion__IdUsu__2D27B809">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Profesionales" EntitySet="Profesionales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProfEsp__IdEspec__3B75D760" Association="DatabaseModel.Store.FK__ProfEsp__IdEspec__3B75D760">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="ProfEsp" EntitySet="ProfEsp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProfEsp__IdProfe__3A81B327" Association="DatabaseModel.Store.FK__ProfEsp__IdProfe__3A81B327">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="ProfEsp" EntitySet="ProfEsp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recetas__IdConsu__5EBF139D" Association="DatabaseModel.Store.FK__Recetas__IdConsu__5EBF139D">
+            <End Role="Consultas" EntitySet="Consultas" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RolFuncio__IdFun__1273C1CD" Association="DatabaseModel.Store.FK__RolFuncio__IdFun__1273C1CD">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="RolFuncion" EntitySet="RolFuncion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RolFuncio__IdFun__1367E606" Association="DatabaseModel.Store.FK__RolFuncio__IdFun__1367E606">
+            <End Role="Funcionalidades" EntitySet="Funcionalidades" />
+            <End Role="RolFuncion" EntitySet="RolFuncion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Turnos__IdAfilia__45F365D3" Association="DatabaseModel.Store.FK__Turnos__IdAfilia__45F365D3">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Turnos__IdEspec__47DBAE45" Association="DatabaseModel.Store.FK__Turnos__IdEspec__47DBAE45">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Turnos__IdProfes__46E78A0C" Association="DatabaseModel.Store.FK__Turnos__IdProfes__46E78A0C">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TurnosCan__IdTur__797309D9" Association="DatabaseModel.Store.FK__TurnosCan__IdTur__797309D9">
+            <End Role="Turnos" EntitySet="Turnos" />
+            <End Role="TurnosCancelados" EntitySet="TurnosCancelados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UsuarioRo__IdRol__08EA5793" Association="DatabaseModel.Store.FK__UsuarioRo__IdRol__08EA5793">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsuarioRol" EntitySet="UsuarioRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UsuarioRo__IdUsu__09DE7BCC" Association="DatabaseModel.Store.FK__UsuarioRo__IdUsu__09DE7BCC">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="UsuarioRol" EntitySet="UsuarioRol" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Administrativo">
+          <Key>
+            <PropertyRef Name="IdAdministrativo" />
+          </Key>
+          <Property Name="IdAdministrativo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Afiliados">
+          <Key>
+            <PropertyRef Name="IdAfiliado" />
+          </Key>
+          <Property Name="IdAfiliado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" MaxLength="255" />
+          <Property Name="Apellido" Type="varchar" MaxLength="255" />
+          <Property Name="TipoDoc" Type="varchar" MaxLength="3" />
+          <Property Name="NumDoc" Type="numeric" />
+          <Property Name="Direccion" Type="varchar" MaxLength="255" />
+          <Property Name="Telefono" Type="numeric" />
+          <Property Name="Mail" Type="varchar" MaxLength="255" />
+          <Property Name="FechaNac" Type="datetime" />
+          <Property Name="Sexo" Type="char" MaxLength="1" />
+          <Property Name="EstadoCivil" Type="varchar" MaxLength="10" />
+          <Property Name="CantFliaCargo" Type="int" />
+          <Property Name="IdPlan" Type="int" />
+          <Property Name="NumAfiliado" Type="int" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="NumConsultas" Type="int" />
+          <Property Name="Estado" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="AfiliadosBaja">
+          <Key>
+            <PropertyRef Name="IdAfiliadosBaja" />
+          </Key>
+          <Property Name="IdAfiliadosBaja" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="IdAgenda" />
+          </Key>
+          <Property Name="IdAgenda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="date" />
+          <Property Name="HoraI" Type="time" />
+          <Property Name="HoraF" Type="time" />
+          <Property Name="IdProfesional" Type="int" />
+          <Property Name="IdEspec" Type="int" />
+        </EntityType>
+        <EntityType Name="BonoConsulta">
+          <Key>
+            <PropertyRef Name="IdBonoCon" />
+          </Key>
+          <Property Name="IdBonoCon" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="IdPlan" Type="int" />
+          <Property Name="Precio" Type="numeric" />
+          <Property Name="FechaCompra" Type="datetime" />
+          <Property Name="NumConsul" Type="int" />
+          <Property Name="FechaImpresion" Type="datetime" />
+          <Property Name="FechaUso" Type="datetime" />
+          <Property Name="NumBonoCon" Type="numeric" />
+        </EntityType>
+        <EntityType Name="BonoFarmacia">
+          <Key>
+            <PropertyRef Name="IdBonoFarm" />
+          </Key>
+          <Property Name="IdBonoFarm" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="IdPlan" Type="int" />
+          <Property Name="Precio" Type="numeric" />
+          <Property Name="FechaCompra" Type="datetime" />
+          <Property Name="fechaVnto" Type="datetime" />
+          <Property Name="Medicamentos" Type="varchar" MaxLength="255" />
+          <Property Name="fechaImpresion" Type="datetime" />
+          <Property Name="NumBonoFarm" Type="numeric" />
+        </EntityType>
+        <EntityType Name="BonoFarmReceta">
+          <Key>
+            <PropertyRef Name="IdBonoFarm" />
+            <PropertyRef Name="IdReceta" />
+          </Key>
+          <Property Name="IdBonoFarm" Type="int" Nullable="false" />
+          <Property Name="IdReceta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CambioDePlan">
+          <Key>
+            <PropertyRef Name="IdCambioDePlan" />
+          </Key>
+          <Property Name="IdCambioDePlan" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="IdPlanAnterior" Type="int" />
+          <Property Name="IdPlanActual" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Motivo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CompraBonos">
+          <Key>
+            <PropertyRef Name="IdCompra" />
+          </Key>
+          <Property Name="IdCompra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCompra" Type="datetime" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="CantBConsulta" Type="int" />
+          <Property Name="CantBFarmacia" Type="int" />
+          <Property Name="PrecioTot" Type="float" />
+        </EntityType>
+        <EntityType Name="CompraBonosConDetalle">
+          <Key>
+            <PropertyRef Name="IdCompra" />
+            <PropertyRef Name="IdBonoCon" />
+          </Key>
+          <Property Name="IdCompra" Type="int" Nullable="false" />
+          <Property Name="IdBonoCon" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompraBonosFarmDetalle">
+          <Key>
+            <PropertyRef Name="IdCompra" />
+            <PropertyRef Name="IdBonoFarm" />
+          </Key>
+          <Property Name="IdCompra" Type="int" Nullable="false" />
+          <Property Name="IdBonoFarm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Consultas">
+          <Key>
+            <PropertyRef Name="IdConsul" />
+          </Key>
+          <Property Name="IdConsul" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="IdProfesional" Type="int" />
+          <Property Name="IdBonoCon" Type="int" />
+          <Property Name="Sintoma" Type="varchar" MaxLength="255" />
+          <Property Name="Enfermedad" Type="varchar" MaxLength="255" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Hora" Type="time" />
+        </EntityType>
+        <EntityType Name="Especialidades">
+          <Key>
+            <PropertyRef Name="IdEspec" />
+          </Key>
+          <Property Name="IdEspec" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="IdTipo" Type="int" />
+          <Property Name="Codigo" Type="numeric" />
+          <Property Name="Estado" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Funcionalidades">
+          <Key>
+            <PropertyRef Name="IdFuncionalidad" />
+          </Key>
+          <Property Name="IdFuncionalidad" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Planes">
+          <Key>
+            <PropertyRef Name="IdPlan" />
+          </Key>
+          <Property Name="IdPlan" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="PrecBConsulta" Type="numeric" />
+          <Property Name="PrecBFarmacia" Type="numeric" />
+          <Property Name="Codigo" Type="numeric" />
+        </EntityType>
+        <EntityType Name="Profesionales">
+          <Key>
+            <PropertyRef Name="IdProfesional" />
+          </Key>
+          <Property Name="IdProfesional" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" MaxLength="255" />
+          <Property Name="Apellido" Type="varchar" MaxLength="255" />
+          <Property Name="TipoDoc" Type="varchar" MaxLength="3" />
+          <Property Name="NumDoc" Type="numeric" />
+          <Property Name="Direccion" Type="varchar" MaxLength="255" />
+          <Property Name="Telefono" Type="numeric" />
+          <Property Name="Mail" Type="varchar" MaxLength="255" />
+          <Property Name="FechaNac" Type="datetime" />
+          <Property Name="Sexo" Type="char" MaxLength="1" />
+          <Property Name="Matricula" Type="varchar" MaxLength="9" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="Motivo" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="ProfEsp">
+          <Key>
+            <PropertyRef Name="IdProfesional" />
+            <PropertyRef Name="IdEspec" />
+          </Key>
+          <Property Name="IdProfesional" Type="int" Nullable="false" />
+          <Property Name="IdEspec" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Recetas">
+          <Key>
+            <PropertyRef Name="IdReceta" />
+          </Key>
+          <Property Name="IdReceta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CantBNec" Type="int" />
+          <Property Name="CantMedic" Type="int" />
+          <Property Name="IdConsul" Type="int" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdRol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" />
+          <Property Name="Estado" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="RolFuncion">
+          <Key>
+            <PropertyRef Name="IdRol" />
+            <PropertyRef Name="IdFuncionalidad" />
+          </Key>
+          <Property Name="IdRol" Type="int" Nullable="false" />
+          <Property Name="IdFuncionalidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoEspecialidad">
+          <Key>
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Name="IdTipo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="Codigo" Type="numeric" />
+        </EntityType>
+        <EntityType Name="Turnos">
+          <Key>
+            <PropertyRef Name="IdTurno" />
+          </Key>
+          <Property Name="IdTurno" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="int" />
+          <Property Name="IdProfesional" Type="int" />
+          <Property Name="IdEspec" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="NumTurno" Type="numeric" />
+          <Property Name="Estado" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TurnosCancelados">
+          <Key>
+            <PropertyRef Name="IdCancelacion" />
+          </Key>
+          <Property Name="IdCancelacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdTurno" Type="int" />
+          <Property Name="Motivo" Type="varchar" MaxLength="15" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="30" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UsuarioRol">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="IdRol" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="varchar" MaxLength="30" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="20" />
+          <Property Name="Estado" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <Association Name="FK__Administr__IdUsu__7E37BEF6">
+          <End Role="Usuarios" Type="DatabaseModel.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Administrativo" Type="DatabaseModel.Store.Administrativo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Administrativo">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Afiliados__IdAfi__286302EC">
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="0..1" />
+          <End Role="AfiliadosBaja" Type="DatabaseModel.Store.AfiliadosBaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="AfiliadosBaja">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Afiliados__IdPla__1BFD2C07">
+          <End Role="Planes" Type="DatabaseModel.Store.Planes" Multiplicity="0..1" />
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="Afiliados">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Afiliados__IdUsu__1CF15040">
+          <End Role="Usuarios" Type="DatabaseModel.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Afiliados">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__IdEspec__412EB0B6">
+          <End Role="Especialidades" Type="DatabaseModel.Store.Especialidades" Multiplicity="0..1" />
+          <End Role="Agenda" Type="DatabaseModel.Store.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="IdEspec" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="IdEspec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__IdProfes__403A8C7D">
+          <End Role="Profesionales" Type="DatabaseModel.Store.Profesionales" Multiplicity="0..1" />
+          <End Role="Agenda" Type="DatabaseModel.Store.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoConsu__IdAfi__4CA06362">
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="0..1" />
+          <End Role="BonoConsulta" Type="DatabaseModel.Store.BonoConsulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="BonoConsulta">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoConsu__IdPla__4D94879B">
+          <End Role="Planes" Type="DatabaseModel.Store.Planes" Multiplicity="0..1" />
+          <End Role="BonoConsulta" Type="DatabaseModel.Store.BonoConsulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="BonoConsulta">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoFarma__IdAfi__59063A47">
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="0..1" />
+          <End Role="BonoFarmacia" Type="DatabaseModel.Store.BonoFarmacia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="BonoFarmacia">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoFarma__IdPla__59FA5E80">
+          <End Role="Planes" Type="DatabaseModel.Store.Planes" Multiplicity="0..1" />
+          <End Role="BonoFarmacia" Type="DatabaseModel.Store.BonoFarmacia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="BonoFarmacia">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoFarmR__IdBon__6383C8BA">
+          <End Role="BonoFarmacia" Type="DatabaseModel.Store.BonoFarmacia" Multiplicity="1" />
+          <End Role="BonoFarmReceta" Type="DatabaseModel.Store.BonoFarmReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BonoFarmacia">
+              <PropertyRef Name="IdBonoFarm" />
+            </Principal>
+            <Dependent Role="BonoFarmReceta">
+              <PropertyRef Name="IdBonoFarm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoFarmR__IdRec__6477ECF3">
+          <End Role="Recetas" Type="DatabaseModel.Store.Recetas" Multiplicity="1" />
+          <End Role="BonoFarmReceta" Type="DatabaseModel.Store.BonoFarmReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recetas">
+              <PropertyRef Name="IdReceta" />
+            </Principal>
+            <Dependent Role="BonoFarmReceta">
+              <PropertyRef Name="IdReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CambioDeP__IdAfi__21B6055D">
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="0..1" />
+          <End Role="CambioDePlan" Type="DatabaseModel.Store.CambioDePlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="CambioDePlan">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CambioDeP__IdPla__22AA2996">
+          <End Role="Planes" Type="DatabaseModel.Store.Planes" Multiplicity="0..1" />
+          <End Role="CambioDePlan" Type="DatabaseModel.Store.CambioDePlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="CambioDePlan">
+              <PropertyRef Name="IdPlanAnterior" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CambioDeP__IdPla__239E4DCF">
+          <End Role="Planes" Type="DatabaseModel.Store.Planes" Multiplicity="0..1" />
+          <End Role="CambioDePlan" Type="DatabaseModel.Store.CambioDePlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="CambioDePlan">
+              <PropertyRef Name="IdPlanActual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompraBon__IdAfi__693CA210">
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="0..1" />
+          <End Role="CompraBonos" Type="DatabaseModel.Store.CompraBonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="CompraBonos">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompraBon__IdBon__6EF57B66">
+          <End Role="BonoConsulta" Type="DatabaseModel.Store.BonoConsulta" Multiplicity="1" />
+          <End Role="CompraBonosConDetalle" Type="DatabaseModel.Store.CompraBonosConDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BonoConsulta">
+              <PropertyRef Name="IdBonoCon" />
+            </Principal>
+            <Dependent Role="CompraBonosConDetalle">
+              <PropertyRef Name="IdBonoCon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompraBon__IdBon__74AE54BC">
+          <End Role="BonoFarmacia" Type="DatabaseModel.Store.BonoFarmacia" Multiplicity="1" />
+          <End Role="CompraBonosFarmDetalle" Type="DatabaseModel.Store.CompraBonosFarmDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BonoFarmacia">
+              <PropertyRef Name="IdBonoFarm" />
+            </Principal>
+            <Dependent Role="CompraBonosFarmDetalle">
+              <PropertyRef Name="IdBonoFarm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompraBon__IdCom__6E01572D">
+          <End Role="CompraBonos" Type="DatabaseModel.Store.CompraBonos" Multiplicity="1" />
+          <End Role="CompraBonosConDetalle" Type="DatabaseModel.Store.CompraBonosConDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompraBonos">
+              <PropertyRef Name="IdCompra" />
+            </Principal>
+            <Dependent Role="CompraBonosConDetalle">
+              <PropertyRef Name="IdCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompraBon__IdCom__73BA3083">
+          <End Role="CompraBonos" Type="DatabaseModel.Store.CompraBonos" Multiplicity="1" />
+          <End Role="CompraBonosFarmDetalle" Type="DatabaseModel.Store.CompraBonosFarmDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompraBonos">
+              <PropertyRef Name="IdCompra" />
+            </Principal>
+            <Dependent Role="CompraBonosFarmDetalle">
+              <PropertyRef Name="IdCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__IdAfi__52593CB8">
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="0..1" />
+          <End Role="Consultas" Type="DatabaseModel.Store.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__IdBon__5441852A">
+          <End Role="BonoConsulta" Type="DatabaseModel.Store.BonoConsulta" Multiplicity="0..1" />
+          <End Role="Consultas" Type="DatabaseModel.Store.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BonoConsulta">
+              <PropertyRef Name="IdBonoCon" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="IdBonoCon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__IdPro__534D60F1">
+          <End Role="Profesionales" Type="DatabaseModel.Store.Profesionales" Multiplicity="0..1" />
+          <End Role="Consultas" Type="DatabaseModel.Store.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Especiali__IdTip__35BCFE0A">
+          <End Role="TipoEspecialidad" Type="DatabaseModel.Store.TipoEspecialidad" Multiplicity="0..1" />
+          <End Role="Especialidades" Type="DatabaseModel.Store.Especialidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEspecialidad">
+              <PropertyRef Name="IdTipo" />
+            </Principal>
+            <Dependent Role="Especialidades">
+              <PropertyRef Name="IdTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profesion__IdUsu__2D27B809">
+          <End Role="Usuarios" Type="DatabaseModel.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Profesionales" Type="DatabaseModel.Store.Profesionales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Profesionales">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProfEsp__IdEspec__3B75D760">
+          <End Role="Especialidades" Type="DatabaseModel.Store.Especialidades" Multiplicity="1" />
+          <End Role="ProfEsp" Type="DatabaseModel.Store.ProfEsp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="IdEspec" />
+            </Principal>
+            <Dependent Role="ProfEsp">
+              <PropertyRef Name="IdEspec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProfEsp__IdProfe__3A81B327">
+          <End Role="Profesionales" Type="DatabaseModel.Store.Profesionales" Multiplicity="1" />
+          <End Role="ProfEsp" Type="DatabaseModel.Store.ProfEsp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="ProfEsp">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recetas__IdConsu__5EBF139D">
+          <End Role="Consultas" Type="DatabaseModel.Store.Consultas" Multiplicity="0..1" />
+          <End Role="Recetas" Type="DatabaseModel.Store.Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consultas">
+              <PropertyRef Name="IdConsul" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="IdConsul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RolFuncio__IdFun__1273C1CD">
+          <End Role="Roles" Type="DatabaseModel.Store.Roles" Multiplicity="1" />
+          <End Role="RolFuncion" Type="DatabaseModel.Store.RolFuncion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="RolFuncion">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RolFuncio__IdFun__1367E606">
+          <End Role="Funcionalidades" Type="DatabaseModel.Store.Funcionalidades" Multiplicity="1" />
+          <End Role="RolFuncion" Type="DatabaseModel.Store.RolFuncion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionalidades">
+              <PropertyRef Name="IdFuncionalidad" />
+            </Principal>
+            <Dependent Role="RolFuncion">
+              <PropertyRef Name="IdFuncionalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Turnos__IdAfilia__45F365D3">
+          <End Role="Afiliados" Type="DatabaseModel.Store.Afiliados" Multiplicity="0..1" />
+          <End Role="Turnos" Type="DatabaseModel.Store.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Turnos__IdEspec__47DBAE45">
+          <End Role="Especialidades" Type="DatabaseModel.Store.Especialidades" Multiplicity="0..1" />
+          <End Role="Turnos" Type="DatabaseModel.Store.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="IdEspec" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="IdEspec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Turnos__IdProfes__46E78A0C">
+          <End Role="Profesionales" Type="DatabaseModel.Store.Profesionales" Multiplicity="0..1" />
+          <End Role="Turnos" Type="DatabaseModel.Store.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TurnosCan__IdTur__797309D9">
+          <End Role="Turnos" Type="DatabaseModel.Store.Turnos" Multiplicity="0..1" />
+          <End Role="TurnosCancelados" Type="DatabaseModel.Store.TurnosCancelados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnos">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="TurnosCancelados">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UsuarioRo__IdRol__08EA5793">
+          <End Role="Roles" Type="DatabaseModel.Store.Roles" Multiplicity="1" />
+          <End Role="UsuarioRol" Type="DatabaseModel.Store.UsuarioRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="UsuarioRol">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UsuarioRo__IdUsu__09DE7BCC">
+          <End Role="Usuarios" Type="DatabaseModel.Store.Usuarios" Multiplicity="1" />
+          <End Role="UsuarioRol" Type="DatabaseModel.Store.UsuarioRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioRol">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'Academia2013.dbo.Maestra' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Maestra">
+        <Property Name="Paciente_Nombre" Type="varchar" MaxLength="255" />
+        <Property Name="Paciente_Apellido" Type="varchar" MaxLength="255" />
+        <Property Name="Paciente_Dni" Type="numeric" />
+        <Property Name="Paciente_Direccion" Type="varchar" MaxLength="255" />
+        <Property Name="Paciente_Telefono" Type="numeric" />
+        <Property Name="Paciente_Mail" Type="varchar" MaxLength="255" />
+        <Property Name="Paciente_Fecha_Nac" Type="datetime" />
+        <Property Name="Plan_Med_Codigo" Type="numeric" />
+        <Property Name="Plan_Med_Descripcion" Type="varchar" MaxLength="255" />
+        <Property Name="Plan_Med_Precio_Bono_Consulta" Type="numeric" />
+        <Property Name="Plan_Med_Precio_Bono_Farmacia" Type="numeric" />
+        <Property Name="Turno_Numero" Type="numeric" />
+        <Property Name="Turno_Fecha" Type="datetime" />
+        <Property Name="Consulta_Sintomas" Type="varchar" MaxLength="255" />
+        <Property Name="Consulta_Enfermedades" Type="varchar" MaxLength="255" />
+        <Property Name="Medico_Nombre" Type="varchar" MaxLength="255" />
+        <Property Name="Medico_Apellido" Type="varchar" MaxLength="255" />
+        <Property Name="Medico_Dni" Type="numeric" />
+        <Property Name="Medico_Direccion" Type="varchar" MaxLength="255" />
+        <Property Name="Medico_Telefono" Type="numeric" />
+        <Property Name="Medico_Mail" Type="varchar" MaxLength="255" />
+        <Property Name="Medico_Fecha_Nac" Type="datetime" />
+        <Property Name="Especialidad_Codigo" Type="numeric" />
+        <Property Name="Especialidad_Descripcion" Type="varchar" MaxLength="255" />
+        <Property Name="Tipo_Especialidad_Codigo" Type="numeric" />
+        <Property Name="Tipo_Especialidad_Descripcion" Type="varchar" MaxLength="255" />
+        <Property Name="Compra_Bono_Fecha" Type="datetime" />
+        <Property Name="Bono_Consulta_Fecha_Impresion" Type="datetime" />
+        <Property Name="Bono_Consulta_Numero" Type="numeric" />
+        <Property Name="Bono_Farmacia_Fecha_Impresion" Type="datetime" />
+        <Property Name="Bono_Farmacia_Numero" Type="numeric" />
+        <Property Name="Bono_Farmacia_Fecha_Vencimiento" Type="datetime" />
+        <Property Name="Bono_Farmacia_Medicamento" Type="varchar" MaxLength="255" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrativo" EntityType="DatabaseModel.Administrativo" />
+          <EntitySet Name="Afiliados" EntityType="DatabaseModel.Afiliados" />
+          <EntitySet Name="AfiliadosBaja" EntityType="DatabaseModel.AfiliadosBaja" />
+          <EntitySet Name="Agenda" EntityType="DatabaseModel.Agenda" />
+          <EntitySet Name="BonoConsulta" EntityType="DatabaseModel.BonoConsulta" />
+          <EntitySet Name="BonoFarmacia" EntityType="DatabaseModel.BonoFarmacia" />
+          <EntitySet Name="CambioDePlan" EntityType="DatabaseModel.CambioDePlan" />
+          <EntitySet Name="CompraBonos" EntityType="DatabaseModel.CompraBonos" />
+          <EntitySet Name="Consultas" EntityType="DatabaseModel.Consultas" />
+          <EntitySet Name="Especialidades" EntityType="DatabaseModel.Especialidades" />
+          <EntitySet Name="Funcionalidades" EntityType="DatabaseModel.Funcionalidades" />
+          <EntitySet Name="Planes" EntityType="DatabaseModel.Planes" />
+          <EntitySet Name="Profesionales" EntityType="DatabaseModel.Profesionales" />
+          <EntitySet Name="ProfEsp" EntityType="DatabaseModel.ProfEsp" />
+          <EntitySet Name="Recetas" EntityType="DatabaseModel.Recetas" />
+          <EntitySet Name="Roles" EntityType="DatabaseModel.Roles" />
+          <EntitySet Name="TipoEspecialidad" EntityType="DatabaseModel.TipoEspecialidad" />
+          <EntitySet Name="Turnos" EntityType="DatabaseModel.Turnos" />
+          <EntitySet Name="TurnosCancelados" EntityType="DatabaseModel.TurnosCancelados" />
+          <EntitySet Name="Usuarios" EntityType="DatabaseModel.Usuarios" />
+          <AssociationSet Name="FK__Administr__IdUsu__7E37BEF6" Association="DatabaseModel.FK__Administr__IdUsu__7E37BEF6">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Administrativo" EntitySet="Administrativo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Afiliados__IdAfi__286302EC" Association="DatabaseModel.FK__Afiliados__IdAfi__286302EC">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="AfiliadosBaja" EntitySet="AfiliadosBaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Afiliados__IdPla__1BFD2C07" Association="DatabaseModel.FK__Afiliados__IdPla__1BFD2C07">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="Afiliados" EntitySet="Afiliados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Afiliados__IdUsu__1CF15040" Association="DatabaseModel.FK__Afiliados__IdUsu__1CF15040">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Afiliados" EntitySet="Afiliados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoConsu__IdAfi__4CA06362" Association="DatabaseModel.FK__BonoConsu__IdAfi__4CA06362">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoFarma__IdAfi__59063A47" Association="DatabaseModel.FK__BonoFarma__IdAfi__59063A47">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CambioDeP__IdAfi__21B6055D" Association="DatabaseModel.FK__CambioDeP__IdAfi__21B6055D">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="CambioDePlan" EntitySet="CambioDePlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompraBon__IdAfi__693CA210" Association="DatabaseModel.FK__CompraBon__IdAfi__693CA210">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="CompraBonos" EntitySet="CompraBonos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__IdAfi__52593CB8" Association="DatabaseModel.FK__Consultas__IdAfi__52593CB8">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Turnos__IdAfilia__45F365D3" Association="DatabaseModel.FK__Turnos__IdAfilia__45F365D3">
+            <End Role="Afiliados" EntitySet="Afiliados" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__IdEspec__412EB0B6" Association="DatabaseModel.FK__Agenda__IdEspec__412EB0B6">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agenda__IdProfes__403A8C7D" Association="DatabaseModel.FK__Agenda__IdProfes__403A8C7D">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="Agenda" EntitySet="Agenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoConsu__IdPla__4D94879B" Association="DatabaseModel.FK__BonoConsu__IdPla__4D94879B">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__IdBon__5441852A" Association="DatabaseModel.FK__Consultas__IdBon__5441852A">
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BonoFarma__IdPla__59FA5E80" Association="DatabaseModel.FK__BonoFarma__IdPla__59FA5E80">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CambioDeP__IdPla__22AA2996" Association="DatabaseModel.FK__CambioDeP__IdPla__22AA2996">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="CambioDePlan" EntitySet="CambioDePlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CambioDeP__IdPla__239E4DCF" Association="DatabaseModel.FK__CambioDeP__IdPla__239E4DCF">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="CambioDePlan" EntitySet="CambioDePlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Consultas__IdPro__534D60F1" Association="DatabaseModel.FK__Consultas__IdPro__534D60F1">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="Consultas" EntitySet="Consultas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recetas__IdConsu__5EBF139D" Association="DatabaseModel.FK__Recetas__IdConsu__5EBF139D">
+            <End Role="Consultas" EntitySet="Consultas" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Especiali__IdTip__35BCFE0A" Association="DatabaseModel.FK__Especiali__IdTip__35BCFE0A">
+            <End Role="TipoEspecialidad" EntitySet="TipoEspecialidad" />
+            <End Role="Especialidades" EntitySet="Especialidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProfEsp__IdEspec__3B75D760" Association="DatabaseModel.FK__ProfEsp__IdEspec__3B75D760">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="ProfEsp" EntitySet="ProfEsp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Turnos__IdEspec__47DBAE45" Association="DatabaseModel.FK__Turnos__IdEspec__47DBAE45">
+            <End Role="Especialidades" EntitySet="Especialidades" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profesion__IdUsu__2D27B809" Association="DatabaseModel.FK__Profesion__IdUsu__2D27B809">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Profesionales" EntitySet="Profesionales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProfEsp__IdProfe__3A81B327" Association="DatabaseModel.FK__ProfEsp__IdProfe__3A81B327">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="ProfEsp" EntitySet="ProfEsp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Turnos__IdProfes__46E78A0C" Association="DatabaseModel.FK__Turnos__IdProfes__46E78A0C">
+            <End Role="Profesionales" EntitySet="Profesionales" />
+            <End Role="Turnos" EntitySet="Turnos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TurnosCan__IdTur__797309D9" Association="DatabaseModel.FK__TurnosCan__IdTur__797309D9">
+            <End Role="Turnos" EntitySet="Turnos" />
+            <End Role="TurnosCancelados" EntitySet="TurnosCancelados" />
+          </AssociationSet>
+          <AssociationSet Name="BonoFarmReceta" Association="DatabaseModel.BonoFarmReceta">
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+          <AssociationSet Name="CompraBonosConDetalle" Association="DatabaseModel.CompraBonosConDetalle">
+            <End Role="BonoConsulta" EntitySet="BonoConsulta" />
+            <End Role="CompraBonos" EntitySet="CompraBonos" />
+          </AssociationSet>
+          <AssociationSet Name="CompraBonosFarmDetalle" Association="DatabaseModel.CompraBonosFarmDetalle">
+            <End Role="BonoFarmacia" EntitySet="BonoFarmacia" />
+            <End Role="CompraBonos" EntitySet="CompraBonos" />
+          </AssociationSet>
+          <AssociationSet Name="RolFuncion" Association="DatabaseModel.RolFuncion">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Funcionalidades" EntitySet="Funcionalidades" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioRol" Association="DatabaseModel.UsuarioRol">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Administrativo">
+          <Key>
+            <PropertyRef Name="IdAdministrativo" />
+          </Key>
+          <Property Name="IdAdministrativo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <NavigationProperty Name="Usuarios" Relationship="DatabaseModel.FK__Administr__IdUsu__7E37BEF6" FromRole="Administrativo" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Afiliados">
+          <Key>
+            <PropertyRef Name="IdAfiliado" />
+          </Key>
+          <Property Name="IdAfiliado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Apellido" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="TipoDoc" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="NumDoc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Direccion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Mail" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FechaNac" Type="DateTime" />
+          <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="EstadoCivil" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CantFliaCargo" Type="Int32" />
+          <Property Name="IdPlan" Type="Int32" />
+          <Property Name="NumAfiliado" Type="Int32" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="NumConsultas" Type="Int32" />
+          <Property Name="Estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="AfiliadosBaja" Relationship="DatabaseModel.FK__Afiliados__IdAfi__286302EC" FromRole="Afiliados" ToRole="AfiliadosBaja" />
+          <NavigationProperty Name="Planes" Relationship="DatabaseModel.FK__Afiliados__IdPla__1BFD2C07" FromRole="Afiliados" ToRole="Planes" />
+          <NavigationProperty Name="Usuarios" Relationship="DatabaseModel.FK__Afiliados__IdUsu__1CF15040" FromRole="Afiliados" ToRole="Usuarios" />
+          <NavigationProperty Name="BonoConsulta" Relationship="DatabaseModel.FK__BonoConsu__IdAfi__4CA06362" FromRole="Afiliados" ToRole="BonoConsulta" />
+          <NavigationProperty Name="BonoFarmacia" Relationship="DatabaseModel.FK__BonoFarma__IdAfi__59063A47" FromRole="Afiliados" ToRole="BonoFarmacia" />
+          <NavigationProperty Name="CambioDePlan" Relationship="DatabaseModel.FK__CambioDeP__IdAfi__21B6055D" FromRole="Afiliados" ToRole="CambioDePlan" />
+          <NavigationProperty Name="CompraBonos" Relationship="DatabaseModel.FK__CompraBon__IdAfi__693CA210" FromRole="Afiliados" ToRole="CompraBonos" />
+          <NavigationProperty Name="Consultas" Relationship="DatabaseModel.FK__Consultas__IdAfi__52593CB8" FromRole="Afiliados" ToRole="Consultas" />
+          <NavigationProperty Name="Turnos" Relationship="DatabaseModel.FK__Turnos__IdAfilia__45F365D3" FromRole="Afiliados" ToRole="Turnos" />
+        </EntityType>
+        <EntityType Name="AfiliadosBaja">
+          <Key>
+            <PropertyRef Name="IdAfiliadosBaja" />
+          </Key>
+          <Property Name="IdAfiliadosBaja" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__Afiliados__IdAfi__286302EC" FromRole="AfiliadosBaja" ToRole="Afiliados" />
+        </EntityType>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="IdAgenda" />
+          </Key>
+          <Property Name="IdAgenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="DateTime" />
+          <Property Name="HoraI" Type="Time" />
+          <Property Name="HoraF" Type="Time" />
+          <Property Name="IdProfesional" Type="Int32" />
+          <Property Name="IdEspec" Type="Int32" />
+          <NavigationProperty Name="Especialidades" Relationship="DatabaseModel.FK__Agenda__IdEspec__412EB0B6" FromRole="Agenda" ToRole="Especialidades" />
+          <NavigationProperty Name="Profesionales" Relationship="DatabaseModel.FK__Agenda__IdProfes__403A8C7D" FromRole="Agenda" ToRole="Profesionales" />
+        </EntityType>
+        <EntityType Name="BonoConsulta">
+          <Key>
+            <PropertyRef Name="IdBonoCon" />
+          </Key>
+          <Property Name="IdBonoCon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="IdPlan" Type="Int32" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FechaCompra" Type="DateTime" />
+          <Property Name="NumConsul" Type="Int32" />
+          <Property Name="FechaImpresion" Type="DateTime" />
+          <Property Name="FechaUso" Type="DateTime" />
+          <Property Name="NumBonoCon" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__BonoConsu__IdAfi__4CA06362" FromRole="BonoConsulta" ToRole="Afiliados" />
+          <NavigationProperty Name="Planes" Relationship="DatabaseModel.FK__BonoConsu__IdPla__4D94879B" FromRole="BonoConsulta" ToRole="Planes" />
+          <NavigationProperty Name="Consultas" Relationship="DatabaseModel.FK__Consultas__IdBon__5441852A" FromRole="BonoConsulta" ToRole="Consultas" />
+          <NavigationProperty Name="CompraBonos" Relationship="DatabaseModel.CompraBonosConDetalle" FromRole="BonoConsulta" ToRole="CompraBonos" />
+        </EntityType>
+        <EntityType Name="BonoFarmacia">
+          <Key>
+            <PropertyRef Name="IdBonoFarm" />
+          </Key>
+          <Property Name="IdBonoFarm" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="IdPlan" Type="Int32" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FechaCompra" Type="DateTime" />
+          <Property Name="fechaVnto" Type="DateTime" />
+          <Property Name="Medicamentos" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="fechaImpresion" Type="DateTime" />
+          <Property Name="NumBonoFarm" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__BonoFarma__IdAfi__59063A47" FromRole="BonoFarmacia" ToRole="Afiliados" />
+          <NavigationProperty Name="Planes" Relationship="DatabaseModel.FK__BonoFarma__IdPla__59FA5E80" FromRole="BonoFarmacia" ToRole="Planes" />
+          <NavigationProperty Name="Recetas" Relationship="DatabaseModel.BonoFarmReceta" FromRole="BonoFarmacia" ToRole="Recetas" />
+          <NavigationProperty Name="CompraBonos" Relationship="DatabaseModel.CompraBonosFarmDetalle" FromRole="BonoFarmacia" ToRole="CompraBonos" />
+        </EntityType>
+        <EntityType Name="CambioDePlan">
+          <Key>
+            <PropertyRef Name="IdCambioDePlan" />
+          </Key>
+          <Property Name="IdCambioDePlan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="IdPlanAnterior" Type="Int32" />
+          <Property Name="IdPlanActual" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" />
+          <Property Name="Motivo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__CambioDeP__IdAfi__21B6055D" FromRole="CambioDePlan" ToRole="Afiliados" />
+          <NavigationProperty Name="Planes" Relationship="DatabaseModel.FK__CambioDeP__IdPla__22AA2996" FromRole="CambioDePlan" ToRole="Planes" />
+          <NavigationProperty Name="Planes1" Relationship="DatabaseModel.FK__CambioDeP__IdPla__239E4DCF" FromRole="CambioDePlan" ToRole="Planes" />
+        </EntityType>
+        <EntityType Name="CompraBonos">
+          <Key>
+            <PropertyRef Name="IdCompra" />
+          </Key>
+          <Property Name="IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCompra" Type="DateTime" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="CantBConsulta" Type="Int32" />
+          <Property Name="CantBFarmacia" Type="Int32" />
+          <Property Name="PrecioTot" Type="Double" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__CompraBon__IdAfi__693CA210" FromRole="CompraBonos" ToRole="Afiliados" />
+          <NavigationProperty Name="BonoConsulta" Relationship="DatabaseModel.CompraBonosConDetalle" FromRole="CompraBonos" ToRole="BonoConsulta" />
+          <NavigationProperty Name="BonoFarmacia" Relationship="DatabaseModel.CompraBonosFarmDetalle" FromRole="CompraBonos" ToRole="BonoFarmacia" />
+        </EntityType>
+        <EntityType Name="Consultas">
+          <Key>
+            <PropertyRef Name="IdConsul" />
+          </Key>
+          <Property Name="IdConsul" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="IdProfesional" Type="Int32" />
+          <Property Name="IdBonoCon" Type="Int32" />
+          <Property Name="Sintoma" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Enfermedad" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha" Type="DateTime" />
+          <Property Name="Hora" Type="Time" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__Consultas__IdAfi__52593CB8" FromRole="Consultas" ToRole="Afiliados" />
+          <NavigationProperty Name="BonoConsulta" Relationship="DatabaseModel.FK__Consultas__IdBon__5441852A" FromRole="Consultas" ToRole="BonoConsulta" />
+          <NavigationProperty Name="Profesionales" Relationship="DatabaseModel.FK__Consultas__IdPro__534D60F1" FromRole="Consultas" ToRole="Profesionales" />
+          <NavigationProperty Name="Recetas" Relationship="DatabaseModel.FK__Recetas__IdConsu__5EBF139D" FromRole="Consultas" ToRole="Recetas" />
+        </EntityType>
+        <EntityType Name="Especialidades">
+          <Key>
+            <PropertyRef Name="IdEspec" />
+          </Key>
+          <Property Name="IdEspec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="IdTipo" Type="Int32" />
+          <Property Name="Codigo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Agenda" Relationship="DatabaseModel.FK__Agenda__IdEspec__412EB0B6" FromRole="Especialidades" ToRole="Agenda" />
+          <NavigationProperty Name="TipoEspecialidad" Relationship="DatabaseModel.FK__Especiali__IdTip__35BCFE0A" FromRole="Especialidades" ToRole="TipoEspecialidad" />
+          <NavigationProperty Name="ProfEsp" Relationship="DatabaseModel.FK__ProfEsp__IdEspec__3B75D760" FromRole="Especialidades" ToRole="ProfEsp" />
+          <NavigationProperty Name="Turnos" Relationship="DatabaseModel.FK__Turnos__IdEspec__47DBAE45" FromRole="Especialidades" ToRole="Turnos" />
+        </EntityType>
+        <EntityType Name="Funcionalidades">
+          <Key>
+            <PropertyRef Name="IdFuncionalidad" />
+          </Key>
+          <Property Name="IdFuncionalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Roles" Relationship="DatabaseModel.RolFuncion" FromRole="Funcionalidades" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="Planes">
+          <Key>
+            <PropertyRef Name="IdPlan" />
+          </Key>
+          <Property Name="IdPlan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PrecBConsulta" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PrecBFarmacia" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Codigo" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__Afiliados__IdPla__1BFD2C07" FromRole="Planes" ToRole="Afiliados" />
+          <NavigationProperty Name="BonoConsulta" Relationship="DatabaseModel.FK__BonoConsu__IdPla__4D94879B" FromRole="Planes" ToRole="BonoConsulta" />
+          <NavigationProperty Name="BonoFarmacia" Relationship="DatabaseModel.FK__BonoFarma__IdPla__59FA5E80" FromRole="Planes" ToRole="BonoFarmacia" />
+          <NavigationProperty Name="CambioDePlan" Relationship="DatabaseModel.FK__CambioDeP__IdPla__22AA2996" FromRole="Planes" ToRole="CambioDePlan" />
+          <NavigationProperty Name="CambioDePlan1" Relationship="DatabaseModel.FK__CambioDeP__IdPla__239E4DCF" FromRole="Planes" ToRole="CambioDePlan" />
+        </EntityType>
+        <EntityType Name="Profesionales">
+          <Key>
+            <PropertyRef Name="IdProfesional" />
+          </Key>
+          <Property Name="IdProfesional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Apellido" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="TipoDoc" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="NumDoc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Direccion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Mail" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FechaNac" Type="DateTime" />
+          <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Matricula" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="Motivo" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Agenda" Relationship="DatabaseModel.FK__Agenda__IdProfes__403A8C7D" FromRole="Profesionales" ToRole="Agenda" />
+          <NavigationProperty Name="Consultas" Relationship="DatabaseModel.FK__Consultas__IdPro__534D60F1" FromRole="Profesionales" ToRole="Consultas" />
+          <NavigationProperty Name="Usuarios" Relationship="DatabaseModel.FK__Profesion__IdUsu__2D27B809" FromRole="Profesionales" ToRole="Usuarios" />
+          <NavigationProperty Name="ProfEsp" Relationship="DatabaseModel.FK__ProfEsp__IdProfe__3A81B327" FromRole="Profesionales" ToRole="ProfEsp" />
+          <NavigationProperty Name="Turnos" Relationship="DatabaseModel.FK__Turnos__IdProfes__46E78A0C" FromRole="Profesionales" ToRole="Turnos" />
+        </EntityType>
+        <EntityType Name="ProfEsp">
+          <Key>
+            <PropertyRef Name="IdProfesional" />
+            <PropertyRef Name="IdEspec" />
+          </Key>
+          <Property Name="IdProfesional" Type="Int32" Nullable="false" />
+          <Property Name="IdEspec" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Especialidades" Relationship="DatabaseModel.FK__ProfEsp__IdEspec__3B75D760" FromRole="ProfEsp" ToRole="Especialidades" />
+          <NavigationProperty Name="Profesionales" Relationship="DatabaseModel.FK__ProfEsp__IdProfe__3A81B327" FromRole="ProfEsp" ToRole="Profesionales" />
+        </EntityType>
+        <EntityType Name="Recetas">
+          <Key>
+            <PropertyRef Name="IdReceta" />
+          </Key>
+          <Property Name="IdReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CantBNec" Type="Int32" />
+          <Property Name="CantMedic" Type="Int32" />
+          <Property Name="IdConsul" Type="Int32" />
+          <NavigationProperty Name="Consultas" Relationship="DatabaseModel.FK__Recetas__IdConsu__5EBF139D" FromRole="Recetas" ToRole="Consultas" />
+          <NavigationProperty Name="BonoFarmacia" Relationship="DatabaseModel.BonoFarmReceta" FromRole="Recetas" ToRole="BonoFarmacia" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Funcionalidades" Relationship="DatabaseModel.RolFuncion" FromRole="Roles" ToRole="Funcionalidades" />
+          <NavigationProperty Name="Usuarios" Relationship="DatabaseModel.UsuarioRol" FromRole="Roles" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="TipoEspecialidad">
+          <Key>
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Name="IdTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Codigo" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Especialidades" Relationship="DatabaseModel.FK__Especiali__IdTip__35BCFE0A" FromRole="TipoEspecialidad" ToRole="Especialidades" />
+        </EntityType>
+        <EntityType Name="Turnos">
+          <Key>
+            <PropertyRef Name="IdTurno" />
+          </Key>
+          <Property Name="IdTurno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAfiliado" Type="Int32" />
+          <Property Name="IdProfesional" Type="Int32" />
+          <Property Name="IdEspec" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" />
+          <Property Name="NumTurno" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__Turnos__IdAfilia__45F365D3" FromRole="Turnos" ToRole="Afiliados" />
+          <NavigationProperty Name="Especialidades" Relationship="DatabaseModel.FK__Turnos__IdEspec__47DBAE45" FromRole="Turnos" ToRole="Especialidades" />
+          <NavigationProperty Name="Profesionales" Relationship="DatabaseModel.FK__Turnos__IdProfes__46E78A0C" FromRole="Turnos" ToRole="Profesionales" />
+          <NavigationProperty Name="TurnosCancelados" Relationship="DatabaseModel.FK__TurnosCan__IdTur__797309D9" FromRole="Turnos" ToRole="TurnosCancelados" />
+        </EntityType>
+        <EntityType Name="TurnosCancelados">
+          <Key>
+            <PropertyRef Name="IdCancelacion" />
+          </Key>
+          <Property Name="IdCancelacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTurno" Type="Int32" />
+          <Property Name="Motivo" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha" Type="DateTime" />
+          <NavigationProperty Name="Turnos" Relationship="DatabaseModel.FK__TurnosCan__IdTur__797309D9" FromRole="TurnosCancelados" ToRole="Turnos" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Administrativo" Relationship="DatabaseModel.FK__Administr__IdUsu__7E37BEF6" FromRole="Usuarios" ToRole="Administrativo" />
+          <NavigationProperty Name="Afiliados" Relationship="DatabaseModel.FK__Afiliados__IdUsu__1CF15040" FromRole="Usuarios" ToRole="Afiliados" />
+          <NavigationProperty Name="Profesionales" Relationship="DatabaseModel.FK__Profesion__IdUsu__2D27B809" FromRole="Usuarios" ToRole="Profesionales" />
+          <NavigationProperty Name="Roles" Relationship="DatabaseModel.UsuarioRol" FromRole="Usuarios" ToRole="Roles" />
+        </EntityType>
+        <Association Name="FK__Administr__IdUsu__7E37BEF6">
+          <End Role="Usuarios" Type="DatabaseModel.Usuarios" Multiplicity="0..1" />
+          <End Role="Administrativo" Type="DatabaseModel.Administrativo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Administrativo">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Afiliados__IdAfi__286302EC">
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="0..1" />
+          <End Role="AfiliadosBaja" Type="DatabaseModel.AfiliadosBaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="AfiliadosBaja">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Afiliados__IdPla__1BFD2C07">
+          <End Role="Planes" Type="DatabaseModel.Planes" Multiplicity="0..1" />
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="Afiliados">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Afiliados__IdUsu__1CF15040">
+          <End Role="Usuarios" Type="DatabaseModel.Usuarios" Multiplicity="0..1" />
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Afiliados">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoConsu__IdAfi__4CA06362">
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="0..1" />
+          <End Role="BonoConsulta" Type="DatabaseModel.BonoConsulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="BonoConsulta">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoFarma__IdAfi__59063A47">
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="0..1" />
+          <End Role="BonoFarmacia" Type="DatabaseModel.BonoFarmacia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="BonoFarmacia">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CambioDeP__IdAfi__21B6055D">
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="0..1" />
+          <End Role="CambioDePlan" Type="DatabaseModel.CambioDePlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="CambioDePlan">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompraBon__IdAfi__693CA210">
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="0..1" />
+          <End Role="CompraBonos" Type="DatabaseModel.CompraBonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="CompraBonos">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__IdAfi__52593CB8">
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="0..1" />
+          <End Role="Consultas" Type="DatabaseModel.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Turnos__IdAfilia__45F365D3">
+          <End Role="Afiliados" Type="DatabaseModel.Afiliados" Multiplicity="0..1" />
+          <End Role="Turnos" Type="DatabaseModel.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Afiliados">
+              <PropertyRef Name="IdAfiliado" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="IdAfiliado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__IdEspec__412EB0B6">
+          <End Role="Especialidades" Type="DatabaseModel.Especialidades" Multiplicity="0..1" />
+          <End Role="Agenda" Type="DatabaseModel.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="IdEspec" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="IdEspec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agenda__IdProfes__403A8C7D">
+          <End Role="Profesionales" Type="DatabaseModel.Profesionales" Multiplicity="0..1" />
+          <End Role="Agenda" Type="DatabaseModel.Agenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoConsu__IdPla__4D94879B">
+          <End Role="Planes" Type="DatabaseModel.Planes" Multiplicity="0..1" />
+          <End Role="BonoConsulta" Type="DatabaseModel.BonoConsulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="BonoConsulta">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__IdBon__5441852A">
+          <End Role="BonoConsulta" Type="DatabaseModel.BonoConsulta" Multiplicity="0..1" />
+          <End Role="Consultas" Type="DatabaseModel.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BonoConsulta">
+              <PropertyRef Name="IdBonoCon" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="IdBonoCon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BonoFarma__IdPla__59FA5E80">
+          <End Role="Planes" Type="DatabaseModel.Planes" Multiplicity="0..1" />
+          <End Role="BonoFarmacia" Type="DatabaseModel.BonoFarmacia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="BonoFarmacia">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CambioDeP__IdPla__22AA2996">
+          <End Role="Planes" Type="DatabaseModel.Planes" Multiplicity="0..1" />
+          <End Role="CambioDePlan" Type="DatabaseModel.CambioDePlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="CambioDePlan">
+              <PropertyRef Name="IdPlanAnterior" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CambioDeP__IdPla__239E4DCF">
+          <End Role="Planes" Type="DatabaseModel.Planes" Multiplicity="0..1" />
+          <End Role="CambioDePlan" Type="DatabaseModel.CambioDePlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="CambioDePlan">
+              <PropertyRef Name="IdPlanActual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Consultas__IdPro__534D60F1">
+          <End Role="Profesionales" Type="DatabaseModel.Profesionales" Multiplicity="0..1" />
+          <End Role="Consultas" Type="DatabaseModel.Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recetas__IdConsu__5EBF139D">
+          <End Role="Consultas" Type="DatabaseModel.Consultas" Multiplicity="0..1" />
+          <End Role="Recetas" Type="DatabaseModel.Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consultas">
+              <PropertyRef Name="IdConsul" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="IdConsul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Especiali__IdTip__35BCFE0A">
+          <End Role="TipoEspecialidad" Type="DatabaseModel.TipoEspecialidad" Multiplicity="0..1" />
+          <End Role="Especialidades" Type="DatabaseModel.Especialidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEspecialidad">
+              <PropertyRef Name="IdTipo" />
+            </Principal>
+            <Dependent Role="Especialidades">
+              <PropertyRef Name="IdTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProfEsp__IdEspec__3B75D760">
+          <End Role="Especialidades" Type="DatabaseModel.Especialidades" Multiplicity="1" />
+          <End Role="ProfEsp" Type="DatabaseModel.ProfEsp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="IdEspec" />
+            </Principal>
+            <Dependent Role="ProfEsp">
+              <PropertyRef Name="IdEspec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Turnos__IdEspec__47DBAE45">
+          <End Role="Especialidades" Type="DatabaseModel.Especialidades" Multiplicity="0..1" />
+          <End Role="Turnos" Type="DatabaseModel.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades">
+              <PropertyRef Name="IdEspec" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="IdEspec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profesion__IdUsu__2D27B809">
+          <End Role="Usuarios" Type="DatabaseModel.Usuarios" Multiplicity="0..1" />
+          <End Role="Profesionales" Type="DatabaseModel.Profesionales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Profesionales">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProfEsp__IdProfe__3A81B327">
+          <End Role="Profesionales" Type="DatabaseModel.Profesionales" Multiplicity="1" />
+          <End Role="ProfEsp" Type="DatabaseModel.ProfEsp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="ProfEsp">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Turnos__IdProfes__46E78A0C">
+          <End Role="Profesionales" Type="DatabaseModel.Profesionales" Multiplicity="0..1" />
+          <End Role="Turnos" Type="DatabaseModel.Turnos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesionales">
+              <PropertyRef Name="IdProfesional" />
+            </Principal>
+            <Dependent Role="Turnos">
+              <PropertyRef Name="IdProfesional" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TurnosCan__IdTur__797309D9">
+          <End Role="Turnos" Type="DatabaseModel.Turnos" Multiplicity="0..1" />
+          <End Role="TurnosCancelados" Type="DatabaseModel.TurnosCancelados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turnos">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="TurnosCancelados">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BonoFarmReceta">
+          <End Role="BonoFarmacia" Type="DatabaseModel.BonoFarmacia" Multiplicity="*" />
+          <End Role="Recetas" Type="DatabaseModel.Recetas" Multiplicity="*" />
+        </Association>
+        <Association Name="CompraBonosConDetalle">
+          <End Role="BonoConsulta" Type="DatabaseModel.BonoConsulta" Multiplicity="*" />
+          <End Role="CompraBonos" Type="DatabaseModel.CompraBonos" Multiplicity="*" />
+        </Association>
+        <Association Name="CompraBonosFarmDetalle">
+          <End Role="BonoFarmacia" Type="DatabaseModel.BonoFarmacia" Multiplicity="*" />
+          <End Role="CompraBonos" Type="DatabaseModel.CompraBonos" Multiplicity="*" />
+        </Association>
+        <Association Name="RolFuncion">
+          <End Role="Roles" Type="DatabaseModel.Roles" Multiplicity="*" />
+          <End Role="Funcionalidades" Type="DatabaseModel.Funcionalidades" Multiplicity="*" />
+        </Association>
+        <Association Name="UsuarioRol">
+          <End Role="Roles" Type="DatabaseModel.Roles" Multiplicity="*" />
+          <End Role="Usuarios" Type="DatabaseModel.Usuarios" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="Administrativo"><EntityTypeMapping TypeName="DatabaseModel.Administrativo"><MappingFragment StoreEntitySet="Administrativo">
+            <ScalarProperty Name="IdAdministrativo" ColumnName="IdAdministrativo" />
+            <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Afiliados"><EntityTypeMapping TypeName="DatabaseModel.Afiliados"><MappingFragment StoreEntitySet="Afiliados">
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+            <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+            <ScalarProperty Name="NumDoc" ColumnName="NumDoc" />
+            <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+            <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+            <ScalarProperty Name="Mail" ColumnName="Mail" />
+            <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+            <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+            <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+            <ScalarProperty Name="CantFliaCargo" ColumnName="CantFliaCargo" />
+            <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+            <ScalarProperty Name="NumAfiliado" ColumnName="NumAfiliado" />
+            <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+            <ScalarProperty Name="NumConsultas" ColumnName="NumConsultas" />
+            <ScalarProperty Name="Estado" ColumnName="Estado" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AfiliadosBaja"><EntityTypeMapping TypeName="DatabaseModel.AfiliadosBaja"><MappingFragment StoreEntitySet="AfiliadosBaja">
+            <ScalarProperty Name="IdAfiliadosBaja" ColumnName="IdAfiliadosBaja" />
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Agenda"><EntityTypeMapping TypeName="DatabaseModel.Agenda"><MappingFragment StoreEntitySet="Agenda">
+            <ScalarProperty Name="IdAgenda" ColumnName="IdAgenda" />
+            <ScalarProperty Name="Dia" ColumnName="Dia" />
+            <ScalarProperty Name="HoraI" ColumnName="HoraI" />
+            <ScalarProperty Name="HoraF" ColumnName="HoraF" />
+            <ScalarProperty Name="IdProfesional" ColumnName="IdProfesional" />
+            <ScalarProperty Name="IdEspec" ColumnName="IdEspec" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BonoConsulta"><EntityTypeMapping TypeName="DatabaseModel.BonoConsulta"><MappingFragment StoreEntitySet="BonoConsulta">
+            <ScalarProperty Name="IdBonoCon" ColumnName="IdBonoCon" />
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+            <ScalarProperty Name="Precio" ColumnName="Precio" />
+            <ScalarProperty Name="FechaCompra" ColumnName="FechaCompra" />
+            <ScalarProperty Name="NumConsul" ColumnName="NumConsul" />
+            <ScalarProperty Name="FechaImpresion" ColumnName="FechaImpresion" />
+            <ScalarProperty Name="FechaUso" ColumnName="FechaUso" />
+            <ScalarProperty Name="NumBonoCon" ColumnName="NumBonoCon" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BonoFarmacia"><EntityTypeMapping TypeName="DatabaseModel.BonoFarmacia"><MappingFragment StoreEntitySet="BonoFarmacia">
+            <ScalarProperty Name="IdBonoFarm" ColumnName="IdBonoFarm" />
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+            <ScalarProperty Name="Precio" ColumnName="Precio" />
+            <ScalarProperty Name="FechaCompra" ColumnName="FechaCompra" />
+            <ScalarProperty Name="fechaVnto" ColumnName="fechaVnto" />
+            <ScalarProperty Name="Medicamentos" ColumnName="Medicamentos" />
+            <ScalarProperty Name="fechaImpresion" ColumnName="fechaImpresion" />
+            <ScalarProperty Name="NumBonoFarm" ColumnName="NumBonoFarm" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CambioDePlan"><EntityTypeMapping TypeName="DatabaseModel.CambioDePlan"><MappingFragment StoreEntitySet="CambioDePlan">
+            <ScalarProperty Name="IdCambioDePlan" ColumnName="IdCambioDePlan" />
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="IdPlanAnterior" ColumnName="IdPlanAnterior" />
+            <ScalarProperty Name="IdPlanActual" ColumnName="IdPlanActual" />
+            <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+            <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CompraBonos"><EntityTypeMapping TypeName="DatabaseModel.CompraBonos"><MappingFragment StoreEntitySet="CompraBonos">
+            <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+            <ScalarProperty Name="FechaCompra" ColumnName="FechaCompra" />
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="CantBConsulta" ColumnName="CantBConsulta" />
+            <ScalarProperty Name="CantBFarmacia" ColumnName="CantBFarmacia" />
+            <ScalarProperty Name="PrecioTot" ColumnName="PrecioTot" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Consultas"><EntityTypeMapping TypeName="DatabaseModel.Consultas"><MappingFragment StoreEntitySet="Consultas">
+            <ScalarProperty Name="IdConsul" ColumnName="IdConsul" />
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="IdProfesional" ColumnName="IdProfesional" />
+            <ScalarProperty Name="IdBonoCon" ColumnName="IdBonoCon" />
+            <ScalarProperty Name="Sintoma" ColumnName="Sintoma" />
+            <ScalarProperty Name="Enfermedad" ColumnName="Enfermedad" />
+            <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+            <ScalarProperty Name="Hora" ColumnName="Hora" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Especialidades"><EntityTypeMapping TypeName="DatabaseModel.Especialidades"><MappingFragment StoreEntitySet="Especialidades">
+            <ScalarProperty Name="IdEspec" ColumnName="IdEspec" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+            <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+            <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+            <ScalarProperty Name="Estado" ColumnName="Estado" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Funcionalidades"><EntityTypeMapping TypeName="DatabaseModel.Funcionalidades"><MappingFragment StoreEntitySet="Funcionalidades">
+            <ScalarProperty Name="IdFuncionalidad" ColumnName="IdFuncionalidad" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Planes"><EntityTypeMapping TypeName="DatabaseModel.Planes"><MappingFragment StoreEntitySet="Planes">
+            <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+            <ScalarProperty Name="PrecBConsulta" ColumnName="PrecBConsulta" />
+            <ScalarProperty Name="PrecBFarmacia" ColumnName="PrecBFarmacia" />
+            <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Profesionales"><EntityTypeMapping TypeName="DatabaseModel.Profesionales"><MappingFragment StoreEntitySet="Profesionales">
+            <ScalarProperty Name="IdProfesional" ColumnName="IdProfesional" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+            <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+            <ScalarProperty Name="NumDoc" ColumnName="NumDoc" />
+            <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+            <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+            <ScalarProperty Name="Mail" ColumnName="Mail" />
+            <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+            <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+            <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+            <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+            <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProfEsp"><EntityTypeMapping TypeName="DatabaseModel.ProfEsp"><MappingFragment StoreEntitySet="ProfEsp">
+            <ScalarProperty Name="IdProfesional" ColumnName="IdProfesional" />
+            <ScalarProperty Name="IdEspec" ColumnName="IdEspec" />
+            <ScalarProperty Name="Estado" ColumnName="Estado" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Recetas"><EntityTypeMapping TypeName="DatabaseModel.Recetas"><MappingFragment StoreEntitySet="Recetas">
+            <ScalarProperty Name="IdReceta" ColumnName="IdReceta" />
+            <ScalarProperty Name="CantBNec" ColumnName="CantBNec" />
+            <ScalarProperty Name="CantMedic" ColumnName="CantMedic" />
+            <ScalarProperty Name="IdConsul" ColumnName="IdConsul" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Roles"><EntityTypeMapping TypeName="DatabaseModel.Roles"><MappingFragment StoreEntitySet="Roles">
+            <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="Estado" ColumnName="Estado" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TipoEspecialidad"><EntityTypeMapping TypeName="DatabaseModel.TipoEspecialidad"><MappingFragment StoreEntitySet="TipoEspecialidad">
+            <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+            <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Turnos"><EntityTypeMapping TypeName="DatabaseModel.Turnos"><MappingFragment StoreEntitySet="Turnos">
+            <ScalarProperty Name="IdTurno" ColumnName="IdTurno" />
+            <ScalarProperty Name="IdAfiliado" ColumnName="IdAfiliado" />
+            <ScalarProperty Name="IdProfesional" ColumnName="IdProfesional" />
+            <ScalarProperty Name="IdEspec" ColumnName="IdEspec" />
+            <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+            <ScalarProperty Name="NumTurno" ColumnName="NumTurno" />
+            <ScalarProperty Name="Estado" ColumnName="Estado" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TurnosCancelados"><EntityTypeMapping TypeName="DatabaseModel.TurnosCancelados"><MappingFragment StoreEntitySet="TurnosCancelados">
+            <ScalarProperty Name="IdCancelacion" ColumnName="IdCancelacion" />
+            <ScalarProperty Name="IdTurno" ColumnName="IdTurno" />
+            <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+            <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Usuarios"><EntityTypeMapping TypeName="DatabaseModel.Usuarios"><MappingFragment StoreEntitySet="Usuarios">
+            <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+            <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+            <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+            <ScalarProperty Name="Estado" ColumnName="Estado" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="BonoFarmReceta" TypeName="DatabaseModel.BonoFarmReceta" StoreEntitySet="BonoFarmReceta">
+            <EndProperty Name="BonoFarmacia">
+              <ScalarProperty Name="IdBonoFarm" ColumnName="IdBonoFarm" />
+            </EndProperty>
+            <EndProperty Name="Recetas">
+              <ScalarProperty Name="IdReceta" ColumnName="IdReceta" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CompraBonosConDetalle" TypeName="DatabaseModel.CompraBonosConDetalle" StoreEntitySet="CompraBonosConDetalle">
+            <EndProperty Name="BonoConsulta">
+              <ScalarProperty Name="IdBonoCon" ColumnName="IdBonoCon" />
+            </EndProperty>
+            <EndProperty Name="CompraBonos">
+              <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CompraBonosFarmDetalle" TypeName="DatabaseModel.CompraBonosFarmDetalle" StoreEntitySet="CompraBonosFarmDetalle">
+            <EndProperty Name="BonoFarmacia">
+              <ScalarProperty Name="IdBonoFarm" ColumnName="IdBonoFarm" />
+            </EndProperty>
+            <EndProperty Name="CompraBonos">
+              <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RolFuncion" TypeName="DatabaseModel.RolFuncion" StoreEntitySet="RolFuncion">
+            <EndProperty Name="Roles">
+              <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+            </EndProperty>
+            <EndProperty Name="Funcionalidades">
+              <ScalarProperty Name="IdFuncionalidad" ColumnName="IdFuncionalidad" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="UsuarioRol" TypeName="DatabaseModel.UsuarioRol" StoreEntitySet="UsuarioRol">
+            <EndProperty Name="Roles">
+              <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+            </EndProperty>
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Database">
+        <EntityTypeShape EntityType="DatabaseModel.Administrativo" Width="1.5" PointX="3" PointY="6.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Afiliados" Width="1.5" PointX="3" PointY="9.75" Height="6.0186165364583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AfiliadosBaja" Width="1.5" PointX="5.25" PointY="11.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Agenda" Width="1.5" PointX="8.25" PointY="15.5" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.BonoConsulta" Width="1.5" PointX="8.25" PointY="11" Height="3.5186979166666639" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.BonoFarmacia" Width="1.5" PointX="5.25" PointY="7" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.CambioDePlan" Width="1.5" PointX="5.25" PointY="14.375" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.CompraBonos" Width="1.5" PointX="10.5" PointY="10" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Consultas" Width="1.5" PointX="10.5" PointY="14" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Especialidades" Width="1.5" PointX="6" PointY="2.75" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Funcionalidades" Width="1.5" PointX="3.75" PointY="0.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Planes" Width="1.5" PointX="0.75" PointY="11.25" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Profesionales" Width="1.5" PointX="6" PointY="18.25" Height="4.4802050781250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.ProfEsp" Width="1.5" PointX="13.25" PointY="14.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Recetas" Width="1.5" PointX="12.75" PointY="11.125" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Roles" Width="1.5" PointX="1.5" PointY="3.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.TipoEspecialidad" Width="1.5" PointX="3.75" PointY="3.25" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Turnos" Width="1.5" PointX="8.25" PointY="6.125" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.TurnosCancelados" Width="1.5" PointX="10.5" PointY="6.625" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Usuarios" Width="1.5" PointX="0.75" PointY="7.5" Height="2.5571907552083388" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK__Administr__IdUsu__7E37BEF6" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.985341796875" />
+          <ConnectorPoint PointX="3" PointY="7.985341796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Afiliados__IdAfi__286302EC" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.768992513020834" />
+          <ConnectorPoint PointX="5.25" PointY="12.768992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Afiliados__IdPla__1BFD2C07" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.720896809895834" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="12.720896809895834" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="12.720896809895834" />
+          <ConnectorPoint PointX="3" PointY="12.720896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Afiliados__IdUsu__1CF15040" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.90359537760417" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="9.9035953776041676" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="9.90359537760417" />
+          <ConnectorPoint PointX="3" PointY="9.90359537760417" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__BonoConsu__IdAfi__4CA06362" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.40625" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="11.40625" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="11.40625" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="11.40625" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="11.40625" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="11.40625" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="11.40625" />
+          <ConnectorPoint PointX="8.25" PointY="11.40625" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__BonoFarma__IdAfi__59063A47" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.134348958333334" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="10.134348958333334" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="10.134348958333334" />
+          <ConnectorPoint PointX="5.25" PointY="10.134348958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__CambioDeP__IdAfi__21B6055D" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.071808268229166" />
+          <ConnectorPoint PointX="5.25" PointY="15.071808268229166" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__CompraBon__IdAfi__693CA210" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.759348958333334" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="10.759348958333334" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="10.759348958333334" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.759348958333334" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.759348958333334" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="10.759348958333334" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="10.759348958333334" />
+          <ConnectorPoint PointX="10.5" PointY="10.759348958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Consultas__IdAfi__52593CB8" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.920400390625" />
+          <ConnectorPoint PointX="5" PointY="13.920400390625" />
+          <ConnectorPoint PointX="5" PointY="13.912985026041667" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="13.912985026041667" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="13.912985026041667" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="13.912985026041667" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="13.912985026041667" />
+          <ConnectorPoint PointX="8" PointY="13.912985026041667" />
+          <ConnectorPoint PointX="8" PointY="14.768697916666664" />
+          <ConnectorPoint PointX="10.25" PointY="14.768697916666664" />
+          <ConnectorPoint PointX="10.25" PointY="13.75" />
+          <ConnectorPoint PointX="11.25" PointY="13.75" />
+          <ConnectorPoint PointX="11.25" PointY="14" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Turnos__IdAfilia__45F365D3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.087621256510417" />
+          <ConnectorPoint PointX="5" PointY="12.087621256510417" />
+          <ConnectorPoint PointX="5" PointY="10.6875" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.6875" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.6875" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="10.6875" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="10.6875" />
+          <ConnectorPoint PointX="9" PointY="10.6875" />
+          <ConnectorPoint PointX="9" PointY="9.2590950520833388" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Agenda__IdEspec__412EB0B6" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.15625" PointY="5.4994921875000031" />
+          <ConnectorPoint PointX="7.15625" PointY="17.622091471354167" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="17.622091471354167" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="17.622091471354167" />
+          <ConnectorPoint PointX="8.25" PointY="17.622091471354167" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Agenda__IdProfes__403A8C7D" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="20.4901025390625" />
+          <ConnectorPoint PointX="9" PointY="20.4901025390625" />
+          <ConnectorPoint PointX="9" PointY="18.057190755208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__BonoConsu__IdPla__4D94879B" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.954196404947915" />
+          <ConnectorPoint PointX="2.75" PointY="11.954196404947915" />
+          <ConnectorPoint PointX="2.75" PointY="9.5" />
+          <ConnectorPoint PointX="4.75" PointY="9.5" />
+          <ConnectorPoint PointX="4.75" PointY="10.875" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="10.875" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="10.875" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.875" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.875" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="10.875" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="10.875" />
+          <ConnectorPoint PointX="9" PointY="10.875" />
+          <ConnectorPoint PointX="9" PointY="11" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Consultas__IdBon__5441852A" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="14.259348958333332" />
+          <ConnectorPoint PointX="10.166666666666666" PointY="14.259348958333332" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="14.259348958333332" />
+          <ConnectorPoint PointX="10.5" PointY="14.259348958333332" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__BonoFarma__IdPla__59FA5E80" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.251152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="10.876152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="9.016591796875" />
+          <ConnectorPoint PointX="5.25" PointY="9.016591796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__CambioDeP__IdPla__22AA2996" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="14.191793619791667" />
+          <ConnectorPoint PointX="1.5" PointY="16.477804361979167" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="16.477804361979167" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="16.477804361979167" />
+          <ConnectorPoint PointX="5.25" PointY="16.477804361979167" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__CambioDeP__IdPla__239E4DCF" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="14.191793619791667" />
+          <ConnectorPoint PointX="1.9062525" PointY="16.123207949218749" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="16.123207949218749" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="16.123207949218749" />
+          <ConnectorPoint PointX="5.25" PointY="16.123207949218749" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Consultas__IdPro__534D60F1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="19.338798769531259" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="19.338798769531259" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="19.338798769531259" />
+          <ConnectorPoint PointX="11.25" PointY="19.338798769531259" />
+          <ConnectorPoint PointX="11.25" PointY="17.326396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Recetas__IdConsu__5EBF139D" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="14.34375" />
+          <ConnectorPoint PointX="12.96875" PointY="14.34375" />
+          <ConnectorPoint PointX="12.96875" PointY="13.297587890624996" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Especiali__IdTip__35BCFE0A" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="4.1439925130208337" />
+          <ConnectorPoint PointX="6" PointY="4.1439925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__ProfEsp__IdEspec__3B75D760" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="4.1247460937500016" />
+          <ConnectorPoint PointX="14.53125" PointY="4.1247460937500016" />
+          <ConnectorPoint PointX="14.53125" PointY="14.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Turnos__IdEspec__47DBAE45" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="4.8433716406250031" />
+          <ConnectorPoint PointX="9" PointY="4.8433716406250031" />
+          <ConnectorPoint PointX="9" PointY="6.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Profesion__IdUsu__2D27B809" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.994882062900647" />
+          <ConnectorPoint PointX="2.5660744349011213" PointY="10.310956497801767" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="10.428807627999525" />
+          <ConnectorPoint PointX="2.6875" PointY="10.432382062900647" />
+          <ConnectorPoint PointX="2.6875" PointY="20.4901025390625" />
+          <ConnectorPoint PointX="6" PointY="20.4901025390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__ProfEsp__IdProfe__3A81B327" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="21.641406308593744" />
+          <ConnectorPoint PointX="14" PointY="21.641406308593744" />
+          <ConnectorPoint PointX="14" PointY="16.730286458333339" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__Turnos__IdProfes__46E78A0C" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.328125" PointY="18.25" />
+          <ConnectorPoint PointX="7.328125" PointY="6.53125" />
+          <ConnectorPoint PointX="8.25" PointY="6.53125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.FK__TurnosCan__IdTur__797309D9" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="7.7112939453125016" />
+          <ConnectorPoint PointX="10.5" PointY="7.7112939453125016" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.BonoFarmReceta" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="13.5" PointY="9.62954752604167" />
+          <ConnectorPoint PointX="13.5" PointY="11.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.CompraBonosConDetalle" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="11.87474609375" />
+          <ConnectorPoint PointX="10.5" PointY="11.87474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.CompraBonosFarmDetalle" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="10.5" PointY="10.259348958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.RolFuncion" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.75" />
+          <ConnectorPoint PointX="2.25" PointY="1.5478417968750016" />
+          <ConnectorPoint PointX="3.75" PointY="1.5478417968750016" />
+        </AssociationConnector>
+        <AssociationConnector Association="DatabaseModel.UsuarioRol" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.875" PointY="5.7302864583333388" />
+          <ConnectorPoint PointX="1.875" PointY="7.5" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

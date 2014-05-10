@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ClinicaWEB.Models.UsuarioModel>
+
+@{
+    ViewBag.Title = "Listado Usuarios";
+}
+
+<h2>Lista de Usuarios</h2>
+
+<p></p>
+    @Html.ActionLink("Crear nuevo Usuario", "Alta")
+ <p>
+     @Html.ActionLink("Ver Usuarios Deshabilitados", "ListarDeshabilitados")
+    </p>
+
+    @using (Html.BeginForm(null, null, FormMethod.Get))
+{
+ <div class="form-group">
+         <b>@Html.Name("Usuario")</b>
+         <input id="Filtro1" name="filtroUsuario" type="text"/>
+    </div>
+    <input id="Submit" type="submit" value="Buscar" />
+}
+<br />
+<table class="table table-hover"> <!-- ir a ~/Contents/Slate.css para detalles -->
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+    @*    <th>
+
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </th>*@
+    @*    <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>*@
+        <th></th>
+    </tr>
+     
+@foreach (var item in Model) {
+    <tr>
+        <td>
+       
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+@*        <td>
+            @Html.DisplayFor(modelItem => item.Contraseña)
+        </td>*@
+       @*  <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>*@
+        <td>
+           @* @Html.ActionLink("Editar", "Editar", new { id=item.IdUsuario }) |*@
+            @Html.ActionLink("Administrar roles", "Listar", "Rol", new { id = item.IdUsuario }, null) |
+            @Html.ActionLink("Deshabilitar", "DesHabilitar", new { id = item.IdUsuario })
+        </td>
+    </tr>
+    
+}
+
+</table>
+
+@Html.ViewBag.mensaje 
+
+<p>
+<p<></p>
+

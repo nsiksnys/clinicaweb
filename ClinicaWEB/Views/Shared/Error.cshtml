@@ -1,0 +1,31 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">@Model.Exception.Message</h3>
+  </div>
+  <div class="panel-body">
+    @if (Model != null && HttpContext.Current.IsDebuggingEnabled)
+    {
+        <div>
+            <p>
+                <b>Controller:</b> @Model.ControllerName<br />
+                <b>Action:</b> @Model.ActionName
+            </p>
+            <div style="overflow:scroll">
+                <pre>
+                    @Model.Exception.StackTrace
+                </pre>
+            </div>
+        </div>
+    }
+  </div>
+  </div>
+</div>
+<br />
+@Html.ActionLink("Atrás", "Index", "Home")

@@ -1,0 +1,73 @@
+﻿@model ClinicaWEB.Models.PlanesModel
+
+@{
+    ViewBag.Title = "Modificacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Modificacion</h2>
+
+@*@using (Html.BeginForm("Modificar")) {*@
+<form action="/Planes/Modificacion" method="post">
+    @Html.ValidationSummary(false, "Por favor complete todos los campos")
+
+    <fieldset>
+        <!-- <legend>PlanesModel</legend> -->
+        <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id)
+            @Html.DisplayFor(model => model.Id)
+            @Html.HiddenFor(model => model.Id)
+            </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descripcion)
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        <div class="form-group">
+            <label for="PrecBConsulta">Precio Bono Consulta</label>
+            @Html.EditorFor(model => model.PrecBConsulta)
+            @Html.ValidationMessageFor(model => model.PrecBConsulta)
+        </div>
+        <div class="form-group">
+            <label for="PrecBFarmacia">Precio Bono Farmacia</label>
+            @Html.EditorFor(model => model.PrecBFarmacia)
+            @Html.ValidationMessageFor(model => model.PrecBFarmacia)
+        </div>
+        <div class="form-group">
+            <label for="Codigo">Codigo</label>
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+
+        @*<h3>@ViewBag.mensaje</h3>*@
+    </fieldset>
+</form>
+@*}*@
+<br />
+
+@if (!String.IsNullOrEmpty(ViewBag.error))
+{
+    <div class="alert alert-danger">
+        <strong>@ViewBag.error</strong>
+    </div>
+}
+
+@if (!String.IsNullOrEmpty(ViewBag.ok))
+{
+    <div class="alert alert-success">
+        <strong>@ViewBag.ok</strong>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver a la lista", "Listar")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

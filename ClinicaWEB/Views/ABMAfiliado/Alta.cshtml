@@ -1,0 +1,188 @@
+﻿@model ClinicaWEB.Models.AfiliadoModel
+
+@{
+    ViewBag.Title = "Alta";
+}
+
+<h2>Alta</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <!-- <legend>AfiliadoModel</legend> -->
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Apellido)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoDoc)
+        </div>
+        <div class="form-group">
+            <select id="Select1">
+                <option>DNI</option>
+                <option>LE</option>
+                <option>LC</option>
+                <option>CI</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.TipoDoc)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumDoc)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.NumDoc)
+            @Html.ValidationMessageFor(model => model.NumDoc)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Direccion)
+            @Html.ValidationMessageFor(model => model.Direccion)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefono)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Telefono)
+            @Html.ValidationMessageFor(model => model.Telefono)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mail)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Mail)
+            @Html.ValidationMessageFor(model => model.Mail)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaNac)
+        </div>
+        <div class="form-group" >
+            <input id="Text1" type="text" readonly=true/>   
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sexo)
+        </div>
+        <div class="form-group">
+            <select id="Select1">
+                <option>Masculino</option>
+                <option>Femenino</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.Sexo)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EstadoCivil)
+        </div>
+        <div class="form-group">
+            <select id="Select1">
+                <option>Casado/a</option>
+                <option>Soltero/a</option>
+                <option>Viudo/a</option>
+                <option>Concubinato</option>
+                <option>Divorciado/a</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.EstadoCivil)
+        </div>
+ 
+        <div class="form-group">
+            @Html.LabelFor(model => model.CantFliaCargo)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.CantFliaCargo)
+            @Html.ValidationMessageFor(model => model.CantFliaCargo)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumAfiliado)
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.NumAfiliado)
+            @Html.ValidationMessageFor(model => model.NumAfiliado)
+        </div>
+
+         <div class="form-group">
+            @Html.LabelFor(model => model.Plan)
+        </div>
+         <div>
+            @Html.DropDownList("ComboPlanes", (List<SelectListItem>)ViewBag.Planes)   
+        </div>
+        <p>
+            <input type="submit" value="Crear" />
+            <input type ="reset" value="Limpiar"/>
+        </p>
+        
+        <!-- <p>
+	    <button class="btn btn-primary" type="submit">Crear</button>
+	    <button class="btn btn-primary" type="submit">Limpiar</button>
+        </p> -->
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Volver al menú principal", "Index")
+</div>
+
+@section Scripts {
+    <!--codigo que crea el calendario y cambia: la fecha a español, la animación al aparecer, los botones de prev y next, el formato de fecha y
+    coloca los combos para cambiar el mes y el año!-->
+    <script type = "text/javascript" src="../../Scripts/jquery-ui-1.8.20.min.js"></script>
+    <script type ="text/javascript">        $("#Text1").datepicker({ dateFormat: 'dd/mm/yy', changeMonth: true, changeYear: true,
+            yearRange: '-100:+0', showOn: 'both', hideIfNoPrevNext: true, duration: '', nextText: "", prevText: "", showAnim: "slideDown",
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'], dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm', firstDay: 1, maxDate: new Date()
+        }).FormatDate("dd/mm/aaa")
+        $.datepicker.setDefaults($.datepicker.regional['es']); </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "Alta.cshtml/llenar",//controller metodo 
+            data: ".ASP.NET",
+            contentType: "application/json; charset=utf-8",
+            type:"GET",
+            dataType: "json",
+            success: function (msg) {
+                var datos = $.parseJSON(msg.d);
+
+                $(datos).each(function () {
+                    var option = $(document.createElement('option'));
+
+                    option.text(this.Descripcion);
+
+                    $("#ComboPlanes").append(option);
+                });
+            },
+        });
+    });
+</script>

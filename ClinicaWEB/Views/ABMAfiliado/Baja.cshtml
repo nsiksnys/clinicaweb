@@ -1,0 +1,66 @@
+﻿@model ClinicaWEB.Models.AfiliadoModel
+
+@{
+    ViewBag.Title = "Baja";
+}
+
+<h2>Baja</h2>
+
+<h3>¿Está seguro que desea eliminar este afiliado?</h3>
+<fieldset>
+    <!--<legend>AfiliadoModel</legend>-->
+
+    <div class="form-group">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="form-group">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="form-group">
+         @Html.DisplayNameFor(model => model.Apellido)
+    </div>
+    <div class="form-group">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="form-group">
+         @Html.DisplayNameFor(model => model.TipoDoc)
+    </div>
+    <div class="form-group">
+        @Html.DisplayFor(model => model.TipoDoc)
+    </div>
+
+    <div class="form-group">
+         @Html.DisplayNameFor(model => model.NumDoc)
+    </div>
+    <div class="form-group">
+        @Html.DisplayFor(model => model.NumDoc)
+    </div>
+
+    <div class="form-group">
+         @Html.DisplayNameFor(model => model.NumAfiliado)
+    </div>
+    <div class="form-group">
+        @Html.DisplayFor(model => model.NumAfiliado)
+    </div>
+
+    <div class="form-group">
+         @Html.DisplayNameFor(model => model.Estado)
+    </div>
+    <div class="form-group">
+        @Html.DisplayFor(model => model.Estado)
+    </div>
+</fieldset>
+<form action="/ABMAfiliado/Baja" method="post"> 
+    @Html.HiddenFor(model => model.Nombre)
+    @Html.HiddenFor(model => model.Apellido)
+    @Html.HiddenFor(model => model.TipoDoc)
+    @Html.HiddenFor(model => model.NumDoc)
+    @Html.HiddenFor(model => model.Estado)
+    <p>
+        <input type="submit" value="Dar de baja" />
+        <!-- <button class="btn btn-primary" type="submit">Borrar</button> --> |
+        @Html.ActionLink("Volver a la lista de afiliados", "BajaYModif")
+    </p>
+    </form>

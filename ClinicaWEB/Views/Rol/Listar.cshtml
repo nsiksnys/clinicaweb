@@ -1,0 +1,75 @@
+﻿@model ClinicaWEB.Models.Usuarios
+@*@using ClinicaWEB.Models.Roles*@
+
+@{
+    ViewBag.Title = "Administrar roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Roles de @Model.Usuario</h2>
+
+@*<ul>
+@foreach (var item in Model.Roles) {
+    
+    <li>
+        @Html.DisplayFor(modelItem => item.Nombre) | 
+        (@Html.ActionLink("Quitar", "Baja", new { idRol = item.IdRol }))*@
+
+        @*@using(Html.BeginForm())
+        {
+            @Html.HiddenFor(modelItem => item.Id)
+            @Html.HiddenFor(modelItem => item.Nombre)
+            <input type="submit" value="Crear" />
+        }*@
+    @*</li>
+}
+</ul>
+<br />*@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Funcionalidades</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model.Roles.Count == 0)
+        {
+            <tr><td colspan="3"><center>Lista vacia.</center></td></tr>
+            }
+        @foreach (var item in Model.Roles)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>
+                    @foreach (var registro in item.Funcionalidades)
+                    {
+                        @Html.DisplayFor(registroItem => registro.Descripcion)
+                        <br />
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Quitar", "Baja", new { idRol = item.IdRol })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (!String.IsNullOrEmpty(ViewBag.error))
+{
+    <div class="alert alert-danger">
+        <strong>@ViewBag.error</strong>
+    </div>
+}
+
+@if (!String.IsNullOrEmpty(ViewBag.ok))
+{
+    <div class="alert alert-success">
+        <strong>@ViewBag.ok</strong>
+    </div>
+}
+<br />
+@Html.ActionLink("Agregar", "Alta",new { idUsuario = Model.IdUsuario })
+

@@ -1,0 +1,52 @@
+﻿@model ClinicaWEB.Models.UsuarioModel
+
+@{
+    ViewBag.Title = "Rehabilitar Usuario";
+}
+
+<h2>Rehabilitar Usuario</h2>
+
+<h3>Esta seguro que desea habilitar este Usuario?</h3>
+<fieldset>
+    @*<legend>UsuarioModel</legend>*@
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario)
+        @Html.DisplayFor(model => model.Usuario)
+    </div>
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.Contraseña)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contraseña)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdUsuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estado)
+    </div>*@
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Usuario)
+     @Html.HiddenFor(model => model.Estado )
+     @Html.HiddenFor(model => model.IdUsuario)
+    <p>
+        <input type="submit" value="Rehabilitar" /> 
+        <!-- <button class="btn btn-link" type="submit">Deshabilitar</button> -->
+        @Html.ViewBag.mensaje 
+<div>
+    @Html.ActionLink("Volver a la lista", "Listar")
+</div>
+       
+    </p>
+}

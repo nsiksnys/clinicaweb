@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ClinicaWEB.Models.PlanesModel>
+
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listar</h2>
+
+<p>
+    @Html.ActionLink("Nuevo plan", "Alta")
+</p>
+
+@using (Html.BeginForm(null, null, FormMethod.Get))
+{
+ <div class="form-group">
+         <b>@Html.Name("Descripcion")</b>
+         <input id="Filtro1" name="filtroDescripcion" type="text"/>
+    </div>
+    <div class="form-group">
+         <b>@Html.Name("Precio Bono Consulta")</b>
+         <input id="Filtro2" name ="filtroBonoConsulta" type="text" />
+    </div> 
+    <div class="form-group">
+         <b>@Html.Name("Precio Bono Farmacia")</b>
+         <input id="Filtro3" name= "filtroBonoFarmacia" type="text" />
+    </div>  
+    <div class="form-group">
+         <b>@Html.Name("Codigo")</b>
+         <input id="Friltro4" name= "filtroCodigo" type="text" />
+    </div>
+    
+    <input id="Submit" type="submit" value="Buscar" />
+}
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecBConsulta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecBFarmacia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    if (Model == null)
+    {
+            <tr><td colspan="3"><center>Lista vacia.</center></td></tr>
+    }
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecBConsulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecBFarmacia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "Modificacion", new { idPlan = item.Id }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
+            @Html.ActionLink("Borrar", "Baja", new { idPlan = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,61 @@
+﻿@model ClinicaWEB.Models.UsuarioModel
+
+@{
+    ViewBag.Title = "Deshabilitar Usuario";
+}
+
+<h2>Deshabilitar Usuario</h2>
+
+<h3>Esta seguro que desea deshabilitar este Usuario?</h3>
+<fieldset>
+    <!-- <legend>UsuarioModel</legend> -->
+
+@*    <div class="form-group">
+         @Html.DisplayNameFor(model => model.Usuario)
+    </div>*@
+    <div class="form-group">
+        @Html.DisplayFor(model => model.Usuario)
+    </div>
+
+@*    <div class="form-group">
+         @Html.DisplayNameFor(model => model.Contraseña)
+    </div>
+    <div class="form-group">
+        @Html.DisplayFor(model => model.Contraseña)
+    </div>*@
+
+  @*  <div class="form-group">
+         @Html.DisplayNameFor(model => model.Estado)
+    </div>*@
+   @* <div class="form-group">
+        @Html.DisplayFor(model => model.Estado)
+    </div>*@
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Usuario)
+     @Html.HiddenFor(model => model.Estado )
+     @Html.HiddenFor(model => model.IdUsuario)
+    <p>
+        <input type="submit" value="Deshabilitar" /> 
+        <!-- <button class="btn btn-link" type="submit">Deshabilitar</button> -->
+        
+ @if (!String.IsNullOrEmpty(ViewBag.error))
+{
+    <div class="alert alert-danger">
+        <strong>@ViewBag.error</strong>
+    </div>
+}
+
+@if (!String.IsNullOrEmpty(ViewBag.ok))
+{
+    <div 
+    class="alert alert-success">
+        <strong>@ViewBag.ok</strong>
+    </div>
+}
+<div>
+    @Html.ActionLink("Volver a la lista", "Listar")
+</div>
+       
+    </p>
+}

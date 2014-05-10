@@ -1,0 +1,95 @@
+﻿@using ClinicaWEB.Models;
+
+@model List <Afiliados>
+@{
+    ViewBag.Title = "Buscar afiliado";
+}
+
+<h2>Lista de Afiliados</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Get))
+{
+ <div class="form-group">
+         @Html.Name("Nombre")
+         <input id="Text1" name="filtroNombre" type="text"/>
+    </div>
+    <div class="form-group">
+         @Html.Name("Apellido")
+         <input id="Text1" name ="filtroApellido" type="text" />
+    </div> 
+    <div class="form-group">
+         @Html.Name("Tipo de documento")
+        <select id="Select1" name ="filtroTipoDoc">
+            <option></option>
+            <option>DNI</option>
+            <option>LE</option>
+            <option>LC</option>
+            <option>CI</option>
+        </select>
+    </div>     
+    <div class="form-group">
+         @Html.Name("Número de documento")
+         <input id="Text1" name= "filtroNumeroDoc" type="text" />
+    </div>  
+    <div class="form-group">
+         @Html.Name("Número de afiliado")
+         <input id="Text1" name= "filtroNumeroAfil" type="text" />
+    </div>
+    
+    <input id="Submit1" type="submit" value="Buscar" />
+}
+<p>
+    @Html.ActionLink("Dar de alta afiliado", "Alta")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.Label("Nombre")
+        </th>
+        <th>
+            @Html.Label("Apellido")
+        </th>
+        <th>
+            @Html.Label("Tipo de documento")
+        </th>
+        <th>
+            @Html.Label("Numero de documento")
+        </th>
+        <th>
+            @Html.Label("Número de afiliado")
+        </th>
+        <th>
+            @Html.Label("Estado")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAfiliado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar afiliado", "Modificacion", new {  id=item.IdAfiliado })
+            @Html.ActionLink("Detalles", "Detalles", new {  id=item.IdAfiliado  })
+            @Html.ActionLink("Eliminar afiliado", "Baja", new {  id=item.IdAfiliado  })
+        </td>
+    </tr>
+}
+
+</table>
